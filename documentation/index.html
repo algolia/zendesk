@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Algolia for Zendesk</title>
+    <title>Documentation - Algolia for Zendesk</title>
     <meta name="description" content="Algolia search inside your Zendesk Help Center">
 
     <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Raleway:300,800" />
@@ -28,7 +28,7 @@
         <ul class="nav navbar-nav navbar-right">
           
           
-            <li >
+            <li class="active">
               <a href="/zendesk/documentation/" title="">Documentation</a>
             </li>
           
@@ -43,41 +43,99 @@
 </header>
 
 
-    <div class='main-content'>
-  <div class='jumbotron'>
-    <div class='container'>
-      <h1>Algolia for Zendesk</h1>
-      <p>Algolia search inside your Zendesk Help Center</p>
-      <p class='text-center'><button type="button" class="btn btn-primary">Request search on your website</button></p>
-    </div>
-  </div>
-  <div class='container'>
-    <h1>Showcase</h1>
-    <div class='row text-center'>
-      <div class='col-sm-4 col-sm-offset-4 showcase'>
-        <a href='https://rememberthedate.zendesk.com/'>
-          <img class='img-responsive showcase--image' src='img/showcase/rememberthedate.png'>
-          <p>RememberTheDate</p>
-        </a>
-      </div>
-    </div>
-    <h1>Features</h1>
-    <div class='row text-center'>
-      <div class='col-sm-4'>
-        <img src='http://placehold.it/200x200'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sit, veritatis tempora ipsum, provident fugiat quas, eum dicta architecto</p>
-      </div>
-      <div class='col-sm-4'>
-        <img src='http://placehold.it/200x200'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sit, veritatis tempora ipsum, provident fugiat quas, eum dicta architecto</p>
-      </div>
-      <div class='col-sm-4'>
-        <img src='http://placehold.it/200x200'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sit, veritatis tempora ipsum, provident fugiat quas, eum dicta architecto</p>
-      </div>
-    </div>
-    <p>Here are some examples of what you could build with documentationsearch.js.</p>
-  </div>
+    <div class="container main-content">
+  <header class="page-header">
+    <h1 class="page-title">Documentation</h1>
+  </header>
+  <article class="page-content">
+    <ul id="markdown-toc">
+  <li><a href="#algolia-search-for-zendesk" id="markdown-toc-algolia-search-for-zendesk">Algolia Search for Zendesk</a>    <ul>
+      <li><a href="#setup" id="markdown-toc-setup">Setup</a>        <ul>
+          <li><a href="#extracting-your-data-to-algolia" id="markdown-toc-extracting-your-data-to-algolia">Extracting your data to Algolia</a></li>
+          <li><a href="#updating-your-help-center-theme" id="markdown-toc-updating-your-help-center-theme">Updating your Help Center theme</a></li>
+        </ul>
+      </li>
+      <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
+      <li><a href="#license" id="markdown-toc-license">License</a></li>
+      <li><a href="#contributing" id="markdown-toc-contributing">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="algolia-search-for-zendesk">Algolia Search for Zendesk</h1>
+
+<p>This JavaScript library allows you to replace the default search of your Zendesk Help Center by Algolia. <a href="https://www.algolia.com">Algolia</a> is a hosted full-text, numerical, and faceted search engine capable of delivering realtime results from the first keystroke.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>To be able to setup your new search on your Zendesk Help Center you’ll need to have an Algolia account with a configured Zendesk Help Center crawler.</p>
+
+<h3 id="extracting-your-data-to-algolia">Extracting your data to Algolia</h3>
+
+<p>This crawler feature is still in beta, just send us an email to be part of the program!</p>
+
+<ul>
+  <li>An Algolia account (our Hacker/FREE plan probably fits your need)</li>
+  <li>A Zendesk API token (<a href="FIXME">generate it following those steps</a>)</li>
+  <li>The associated Zendesk application name &amp; email</li>
+</ul>
+
+<h3 id="updating-your-help-center-theme">Updating your Help Center theme</h3>
+
+<p>Once your data has been extracted to Algolia, you need to update your Help Center theme in order to replace the search feature by Algolia.</p>
+
+<ul>
+  <li>Click “Customize the design”</li>
+  <li>Select the “Document Head” template and add the following lines:</li>
+</ul>
+
+<pre><code class="language-html">&lt;link rel="stylesheet" type="text/css" href="//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.css"&gt;
+&lt;script type="text/javascript" src="//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  algoliasearchZendeskHC({
+    applicationId: '&lt;YOUR APPLICATION_ID&gt;',
+    apiKey: '&lt;YOUR SEARCH ONLY API KEY&gt;',
+    subdomain: '&lt;YOUR ZENDESK APPLICATION NAME&gt;'
+    //
+    // Optional configuration:
+    //
+    // indexPrefix: 'zendesk_',    // or you custom &lt;INDEX_PREFIX&gt;
+    // baseUrl: '/hc/',            // the base URL of your Help Center
+    // colors: {
+    //   primary: '#D4D4D4',       // the primary color
+    //   secondary: '#D4D4D4'      // the secondary color
+    // },
+    // autocomplete: {
+    //   enabled: true,            // is the autocomplete feature enabled?
+    //   inputSelector: '#query',  // the DOM selector to select the search box
+    //   sections: {
+    //     enabled: true,          // does the autocomplete menu embed a 'sections' section
+    //     hits: 3                 // the number of suggestions to display
+    //   },
+    //   articles: {
+    //     enabled: true,          // does the autocomplete menu embed a 'articles' section
+    //     hits: 3                 // the number of suggestions to display
+    //   }
+    // },
+    // instantsearch: {
+    //   enabled: true,
+    //   tagsLimit: 15             // Maximum number of tags to display
+    // }
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h2 id="demo">Demo</h2>
+
+<h2 id="license">License</h2>
+
+<p>This library is <a href="https://github.com/algolia/algoliasearch-zendesk/blob/master/LICENSE">MIT licensed</a>.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>We’re considering any contribution and PR, please go ahead!</p>
+
+  </article>
 </div>
 
 
@@ -186,6 +244,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   
+
   </body>
 
 </html>
