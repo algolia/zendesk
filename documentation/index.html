@@ -56,11 +56,7 @@
     <h1 class="page-title">Documentation</h1>
   </header>
   <article class="page-content">
-    <p>This JavaScript library allows you to replace the default search of your Zendesk Help Center by Algolia. <a href="https://www.algolia.com">Algolia</a> is a hosted full-text, numerical, and faceted search engine capable of delivering realtime results from the first keystroke.</p>
-
-<p>We’ll crawl your Zendesk API to extract your Help Center content and provide you a small code snippet to power your search with Algolia.</p>
-
-<h2 id="setup">Setup</h2>
+    <h2 id="documentation">Documentation</h2>
 
 <p>To be able to setup your new search on your Zendesk Help Center you’ll need to have an Algolia account with a configured Zendesk Help Center crawler.</p>
 
@@ -83,73 +79,62 @@
   <li>Select the “Document Head” template and add the following lines:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.css"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-  <span class="nx">algoliasearchZendeskHC</span><span class="p">({</span>
-    <span class="na">applicationId</span><span class="p">:</span> <span class="s1">'&lt;YOUR APPLICATION_ID&gt;'</span><span class="p">,</span>
-    <span class="na">apiKey</span><span class="p">:</span> <span class="s1">'&lt;YOUR SEARCH ONLY API KEY&gt;'</span><span class="p">,</span>
-    <span class="na">subdomain</span><span class="p">:</span> <span class="s1">'&lt;YOUR ZENDESK APPLICATION NAME&gt;'</span>
-    <span class="c1">//</span>
-    <span class="c1">// Optional configuration:</span>
-    <span class="c1">//</span>
-    <span class="c1">// indexPrefix: 'zendesk_',    // or you custom &lt;INDEX_PREFIX&gt;</span>
-    <span class="c1">// baseUrl: '/hc/',            // the base URL of your Help Center</span>
-    <span class="c1">// colors: {</span>
-    <span class="c1">//   primary: '#D4D4D4',       // the primary color</span>
-    <span class="c1">//   secondary: '#D4D4D4'      // the secondary color</span>
-    <span class="c1">// },</span>
-    <span class="c1">// autocomplete: {</span>
-    <span class="c1">//   enabled: true,            // is the autocomplete feature enabled?</span>
-    <span class="c1">//   inputSelector: '#query',  // the DOM selector to select the search box</span>
-    <span class="c1">//   sections: {</span>
-    <span class="c1">//     enabled: true,          // does the autocomplete menu embed a 'sections' section</span>
-    <span class="c1">//     hits: 3                 // the number of suggestions to display</span>
-    <span class="c1">//   },</span>
-    <span class="c1">//   articles: {</span>
-    <span class="c1">//     enabled: true,          // does the autocomplete menu embed a 'articles' section</span>
-    <span class="c1">//     hits: 3                 // the number of suggestions to display</span>
-    <span class="c1">//   }</span>
-    <span class="c1">// },</span>
-    <span class="c1">// instantsearch: {</span>
-    <span class="c1">//   enabled: true,</span>
-    <span class="c1">//   tagsLimit: 15             // Maximum number of tags to display</span>
-    <span class="c1">// },</span>
-    <span class="c1">// translations: {             // These accept strings or objects associating locale with value</span>
-    <span class="c1">//                             // e.g. {</span>
-    <span class="c1">//                             //   found_in: {</span>
-    <span class="c1">//                             //     'en-us': 'Found in',</span>
-    <span class="c1">//                             //     'fr': 'En'</span>
-    <span class="c1">//                             //   }</span>
-    <span class="c1">//                             // }</span>
-    <span class="c1">//   article: 'Article'</span>
-    <span class="c1">//   articles: 'Articles'</span>
-    <span class="c1">//   categories: 'Categories'</span>
-    <span class="c1">//   sections: 'Sections'</span>
-    <span class="c1">//   tags: 'Tags'</span>
-    <span class="c1">//   search_by: 'Search by'</span>
-    <span class="c1">//   no_result: 'No result'</span>
-    <span class="c1">//   result: 'Result'</span>
-    <span class="c1">//   results: 'Results'</span>
-    <span class="c1">//   found_in: 'Found in'</span>
-    <span class="c1">//   search_by: 'Search by'</span>
-    <span class="c1">//   placeholder_autocomplete: 'Search in sections and articles'</span>
-    <span class="c1">//   placeholder_instantsearch: 'Search in articles'</span>
-    <span class="c1">// }</span>
-  <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
+<pre><code class="language-html">&lt;link rel="stylesheet" type="text/css" href="//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.css"&gt;
+&lt;script type="text/javascript" src="//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  algoliasearchZendeskHC({
+    applicationId: '&lt;YOUR APPLICATION_ID&gt;',
+    apiKey: '&lt;YOUR SEARCH ONLY API KEY&gt;',
+    subdomain: '&lt;YOUR ZENDESK APPLICATION NAME&gt;'
+    //
+    // Optional configuration:
+    //
+    // indexPrefix: 'zendesk_',    // or you custom &lt;INDEX_PREFIX&gt;
+    // baseUrl: '/hc/',            // the base URL of your Help Center
+    // colors: {
+    //   primary: '#D4D4D4',       // the primary color
+    //   secondary: '#D4D4D4'      // the secondary color
+    // },
+    // autocomplete: {
+    //   enabled: true,            // is the autocomplete feature enabled?
+    //   inputSelector: '#query',  // the DOM selector to select the search box
+    //   sections: {
+    //     enabled: true,          // does the autocomplete menu embed a 'sections' section
+    //     hits: 3                 // the number of suggestions to display
+    //   },
+    //   articles: {
+    //     enabled: true,          // does the autocomplete menu embed a 'articles' section
+    //     hits: 3                 // the number of suggestions to display
+    //   }
+    // },
+    // instantsearch: {
+    //   enabled: true,
+    //   tagsLimit: 15             // Maximum number of tags to display
+    // },
+    // translations: {             // These accept strings or objects associating locale with value
+    //                             // e.g. {
+    //                             //   found_in: {
+    //                             //     'en-us': 'Found in',
+    //                             //     'fr': 'En'
+    //                             //   }
+    //                             // }
+    //   article: 'Article'
+    //   articles: 'Articles'
+    //   categories: 'Categories'
+    //   sections: 'Sections'
+    //   tags: 'Tags'
+    //   search_by: 'Search by'
+    //   no_result: 'No result'
+    //   result: 'Result'
+    //   results: 'Results'
+    //   found_in: 'Found in'
+    //   search_by: 'Search by'
+    //   placeholder_autocomplete: 'Search in sections and articles'
+    //   placeholder_instantsearch: 'Search in articles'
+    // }
+  });
+&lt;/script&gt;
 </code></pre>
-</div>
-
-<h2 id="demo">Demo</h2>
-
-<h2 id="license">License</h2>
-
-<p>This library is <a href="https://github.com/algolia/algoliasearch-zendesk/blob/master/LICENSE">MIT licensed</a>.</p>
-
-<h2 id="contributing">Contributing</h2>
-
-<p>We’re considering any contribution and PR, please go ahead!</p>
 
   </article>
 </div>
