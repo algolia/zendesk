@@ -77,62 +77,66 @@
   <li>Select the “Document Head” template and add the following lines:</li>
 </ul>
 
-<pre><code class="language-html">&lt;link rel="stylesheet" type="text/css" href="//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.css"&gt;
-&lt;script type="text/javascript" src="//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript"&gt;
-  algoliasearchZendeskHC({
-    applicationId: '&lt;YOUR APPLICATION_ID&gt;',
-    apiKey: '&lt;YOUR SEARCH ONLY API KEY&gt;',
-    subdomain: '&lt;YOUR ZENDESK APPLICATION NAME&gt;'
-    //
-    // Optional configuration:
-    //
-    // indexPrefix: 'zendesk_',    // or you custom &lt;INDEX_PREFIX&gt;
-    // baseUrl: '/hc/',            // the base URL of your Help Center
-    // colors: {
-    //   primary: '#D4D4D4',       // the primary color
-    //   secondary: '#D4D4D4'      // the secondary color
-    // },
-    // autocomplete: {
-    //   enabled: true,            // is the autocomplete feature enabled?
-    //   inputSelector: '#query',  // the DOM selector to select the search box
-    //   sections: {
-    //     enabled: true,          // does the autocomplete menu embed a 'sections' section
-    //     hits: 3                 // the number of suggestions to display
-    //   },
-    //   articles: {
-    //     enabled: true,          // does the autocomplete menu embed a 'articles' section
-    //     hits: 3                 // the number of suggestions to display
-    //   }
-    // },
-    // instantsearch: {
-    //   enabled: true,
-    //   tagsLimit: 15             // Maximum number of tags to display
-    // },
-    // translations: {             // These accept strings or objects associating locale with value
-    //                             // e.g. {
-    //                             //   found_in: {
-    //                             //     'en-us': 'Found in',
-    //                             //     'fr': 'En'
-    //                             //   }
-    //                             // }
-    //   article: 'Article'
-    //   articles: 'Articles'
-    //   categories: 'Categories'
-    //   sections: 'Sections'
-    //   tags: 'Tags'
-    //   search_by: 'Search by'
-    //   no_result: 'No result'
-    //   result: 'Result'
-    //   results: 'Results'
-    //   found_in: 'Found in'
-    //   search_by: 'Search by'
-    //   placeholder_autocomplete: 'Search in sections and articles'
-    //   placeholder_instantsearch: 'Search in articles'
-    // }
-  });
-&lt;/script&gt;
-</code></pre>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;link</span> <span style="color:#b48">rel</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">stylesheet</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text/css</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">href</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.css</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text/javascript</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">src</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//cdn.jsdelivr/algoliasearch-zendesk/1/algoliasearch-zendesk.min.js</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text/javascript</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+<span style="background-color:hsla(0,0%,0%,0.07);color:black">  algoliasearchZendeskHC({
+    <span style="color:#606">applicationId</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;YOUR APPLICATION_ID&gt;</span><span style="color:#710">'</span></span>,
+    <span style="color:#606">apiKey</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;YOUR SEARCH ONLY API KEY&gt;</span><span style="color:#710">'</span></span>,
+    <span style="color:#606">subdomain</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;YOUR ZENDESK APPLICATION NAME&gt;</span><span style="color:#710">'</span></span>,
+
+    <span style="color:#777">//</span>
+    <span style="color:#777">// Optional configuration:</span>
+    <span style="color:#777">//</span>
+    <span style="color:#606">indexPrefix</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">zendesk_</span><span style="color:#710">'</span></span>,    <span style="color:#777">// or you custom &lt;INDEX_PREFIX&gt;</span>
+    <span style="color:#606">baseUrl</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/hc/</span><span style="color:#710">'</span></span>,            <span style="color:#777">// the base URL of your Help Center</span>
+    <span style="color:#606">colors</span>: {
+      <span style="color:#606">primary</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">#D4D4D4</span><span style="color:#710">'</span></span>,       <span style="color:#777">// the primary color</span>
+      <span style="color:#606">secondary</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">#D4D4D4</span><span style="color:#710">'</span></span>      <span style="color:#777">// the secondary color</span>
+    },
+    <span style="color:#606">autocomplete</span>: {
+      <span style="color:#606">enabled</span>: <span style="color:#069">true</span>,            <span style="color:#777">// is the autocomplete feature enabled?</span>
+      <span style="color:#606">inputSelector</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">#query</span><span style="color:#710">'</span></span>,  <span style="color:#777">// the DOM selector to select the search box</span>
+      <span style="color:#606">sections</span>: {
+        <span style="color:#606">enabled</span>: <span style="color:#069">true</span>,          <span style="color:#777">// does the autocomplete menu embed a 'sections' section</span>
+        <span style="color:#606">hits</span>: <span style="color:#00D">3</span>                 <span style="color:#777">// the number of suggestions to display</span>
+      },
+      <span style="color:#606">articles</span>: {
+        <span style="color:#606">enabled</span>: <span style="color:#069">true</span>,          <span style="color:#777">// does the autocomplete menu embed a 'articles' section</span>
+        <span style="color:#606">hits</span>: <span style="color:#00D">3</span>                 <span style="color:#777">// the number of suggestions to display</span>
+      }
+    },
+    <span style="color:#606">instantsearch</span>: {
+      <span style="color:#606">enabled</span>: <span style="color:#069">true</span>,
+      <span style="color:#606">tagsLimit</span>: <span style="color:#00D">15</span>             <span style="color:#777">// Maximum number of tags to display</span>
+    },
+    <span style="color:#606">translations</span>: {             <span style="color:#777">// These accept strings or objects associating locale with value</span>
+                                <span style="color:#777">// e.g. {</span>
+                                <span style="color:#777">//   found_in: {</span>
+                                <span style="color:#777">//     'en-us': 'Found in',</span>
+                                <span style="color:#777">//     'fr': 'En'</span>
+                                <span style="color:#777">//   }</span>
+                                <span style="color:#777">// }</span>
+      <span style="color:#606">article</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Article</span><span style="color:#710">'</span></span>
+      articles: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Articles</span><span style="color:#710">'</span></span>
+      categories: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Categories</span><span style="color:#710">'</span></span>
+      sections: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Sections</span><span style="color:#710">'</span></span>
+      tags: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Tags</span><span style="color:#710">'</span></span>
+      search_by: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search by</span><span style="color:#710">'</span></span>
+      no_result: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No result</span><span style="color:#710">'</span></span>
+      result: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Result</span><span style="color:#710">'</span></span>
+      results: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Results</span><span style="color:#710">'</span></span>
+      found_in: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Found in</span><span style="color:#710">'</span></span>
+      search_by: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search by</span><span style="color:#710">'</span></span>
+      placeholder_autocomplete: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search in sections and articles</span><span style="color:#710">'</span></span>
+      placeholder_instantsearch: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search in articles</span><span style="color:#710">'</span></span>
+    }
+  });</span>
+<span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
 
   </article>
 </div>

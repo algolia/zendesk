@@ -3817,6 +3817,9 @@ h3 {
   font-size: 1.2em;
   font-weight: bold; }
 
+.CodeRay .code pre * {
+  background: transparent !important; }
+
 footer.site-footer {
   padding-top: 2em;
   margin-top: 0;
