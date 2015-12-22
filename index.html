@@ -51,7 +51,34 @@
 </header>
 
 
-    <div class='main-content'>
+    <div aria-labelledby='join-label' class='modal fade' id='join' role='dialog' tabindex='-1'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <form action='https://www.algolia.com/zendesk/auth' method='get'>
+        <div class='modal-header'>
+          <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>&times;</button>
+          <h4 class='modal-title' id='join-label'>Join the beta</h4>
+        </div>
+        <div class='modal-body'>
+          <p>You&#39;ll first need to be logged in on your
+          <a href="https://www.algolia.com/dashboard">Algolia account</a>
+          in order to use this integration.<br>
+          <a href="https://www.algolia.com/users/sign_up">Click here to create one</a></p>
+          <hr>
+          <div class='form-group'>
+            <label for='join-subdomain'>Zendesk subdomain</label>
+            <input class='form-control' id='join-subdomain' name='subdomain' placeholder='your-zendesk-instance(.zendesk.com)' type='text'>
+          </div>
+        </div>
+        <div class='modal-footer'>
+          <button class='btn btn-default' data-dismiss='modal' type='button'>Close</button>
+          <button class='btn btn-primary' type='submit'>Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class='main-content'>
   <div class='jumbotron'>
     <div class='container'>
       <h1>Algolia for Zendesk</h1>
@@ -62,14 +89,15 @@
       </div>
       <div class='spacer50'></div>
       <p class='text-center'>
-        <a class='btn btn-primary btn-lg' href='mailto:hey@algolia.com?subject=Join%20the%20Zendesk%20beta'>
+        <a class='btn btn-primary btn-lg' data-target='#join' data-toggle='modal'>
           Join the beta
-          <i class='fa fa-envelope-o'></i>
         </a>
       </p>
     </div>
   </div>
   <div class='container'>
+    <div class='spacer50'></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam atque deleniti illum dolores voluptatem saepe fuga consequatur, quibusdam placeat ex, voluptatum praesentium fugiat odit consequuntur. Mollitia ut praesentium, fuga aliquam.</p>
     <div class='spacer100'></div>
     <h1 class='headline'>Features</h1>
     <div class='features'>
@@ -123,13 +151,13 @@
     <div class='showcases'>
       <div class='row'>
         <div class='col-sm-4'>
-          <a class='showcase' href='https://support.aodocs.com/hc/en-us'>
-            <img class='img-responsive' src='img/showcase/aodocs.png'>
+          <a class='showcase' href='https://rememberthedate.zendesk.com/hc'>
+            <img class='img-responsive' src='img/showcase/rememberthedate.png'>
           </a>
-          <p>AODOCS</p>
+          <p>Remember The Date</p>
         </div>
         <div class='col-sm-4'>
-          <a class='showcase' href='https://support.sorba.ch/hc'>
+          <a class='showcase' href='https://https://support.sorba.ch/hc'>
             <img class='img-responsive' src='img/showcase/sorba.png'>
           </a>
           <p>SORBA</p>
@@ -190,6 +218,7 @@
 </footer>
 
 
+    <script src="//cdn.jsdelivr.net/jquery/2/jquery.min.js"></script>
     <script src="/zendesk/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
