@@ -58,15 +58,15 @@
   <article class="page-content">
     <p>To be able to setup your new search on your Zendesk Help Center you’ll need to have an Algolia account with a configured Zendesk Help Center crawler.</p>
 
-<h3 id="extracting-your-data-to-algolia">Extracting your data to Algolia</h3>
+<h3 id="synchronize-algolia-with-your-help-center-data">Synchronize Algolia with your Help Center data</h3>
 
-<p>This crawler feature is still in beta, just send us an email to be part of the program!</p>
-
-<ul>
-  <li>An Algolia account (our Hacker/FREE plan probably fits your need)</li>
-  <li>A Zendesk API token</li>
-  <li>The associated Zendesk application name &amp; email</li>
-</ul>
+<ol>
+  <li><a href="https://www.algolia.com/users/sign_in">Login</a> or <a href="https://www.algolia.com/users/sign_up">sign-up</a> on Algolia</li>
+  <li>Visit our <a href="https://www.community.algolia.com/zendesk/">Zendesk community page</a> and click <code>Join the beta</code></li>
+  <li>Enter your zendesk subdomain (<code>your_subdomain</code> in <code>your_subdomain.zendesk.com</code>)</li>
+  <li>When Zendesk asks you to approve Algolia in your Zendesk instance, click <code>Allow</code></li>
+  <li>That’s it! Algolia now automatically handles the indexing of your Help Center</li>
+</ol>
 
 <h3 id="updating-your-help-center-theme">Updating your Help Center theme</h3>
 
@@ -118,19 +118,19 @@
                                 <span style="color:#777">//     'fr': 'En'</span>
                                 <span style="color:#777">//   }</span>
                                 <span style="color:#777">// }</span>
-      <span style="color:#606">article</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Article</span><span style="color:#710">'</span></span>
-      articles: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Articles</span><span style="color:#710">'</span></span>
-      categories: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Categories</span><span style="color:#710">'</span></span>
-      sections: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Sections</span><span style="color:#710">'</span></span>
-      tags: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Tags</span><span style="color:#710">'</span></span>
-      search_by: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search by</span><span style="color:#710">'</span></span>
-      no_result: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No result</span><span style="color:#710">'</span></span>
-      result: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Result</span><span style="color:#710">'</span></span>
-      results: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Results</span><span style="color:#710">'</span></span>
-      found_in: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Found in</span><span style="color:#710">'</span></span>
-      search_by: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search by</span><span style="color:#710">'</span></span>
-      placeholder_autocomplete: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search in sections and articles</span><span style="color:#710">'</span></span>
-      placeholder_instantsearch: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search in articles</span><span style="color:#710">'</span></span>
+      <span style="color:#606">article</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Article</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">articles</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Articles</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">categories</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Categories</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">sections</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Sections</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">tags</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Tags</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">search_by</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search by</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">no_result</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No result</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">result</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Result</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">results</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Results</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">found_in</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Found in</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">search_by</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search by</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">placeholder_autocomplete</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search in sections and articles</span><span style="color:#710">'</span></span>,
+      <span style="color:#606">placeholder_instantsearch</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Search in articles</span><span style="color:#710">'</span></span>
     }
   });</span>
 <span style="color:#070;font-weight:bold">&lt;/script&gt;</span>

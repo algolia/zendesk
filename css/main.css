@@ -3965,6 +3965,9 @@ h3 {
 .CodeRay .code pre * {
   background: transparent !important; }
 
+code {
+  color: #5e3800; }
+
 footer.site-footer {
   padding-top: 2em;
   margin-top: 0;
