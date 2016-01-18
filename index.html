@@ -23,8 +23,12 @@
           Menu&nbsp;&nbsp;<i class="fa fa-bars"></i>
         </button>
         <a class="navbar-brand" href="/zendesk/">
-          <img src="/zendesk/img/algolia-logo.svg" alt="Algolia" style="display: inline-block; height: 1.5em; margin-right: 10px" />
-          for Zendesk
+          <img class="navbar-brand--logo" src="/zendesk/img/algolia-logo.svg" alt="Algolia" style="" />
+          <div class="navbar-brand--subtitle">
+            
+              presents
+            
+          </div>
         </a>
       </div>
       <div id="instant-search-nav" class="navbar-collapse collapse">
@@ -40,7 +44,7 @@
             </li>
           
           <li class="text-xl">
-              <a href="https://github.com/algolia/algoliasearch-zendesk" title="GitHub">
+              <a class="navbar--github-link" href="https://github.com/algolia/algoliasearch-zendesk" title="GitHub">
                 <i class="fa fa-github"></i>
               </a>
             </li>
@@ -51,102 +55,119 @@
 </header>
 
 
-    <div aria-labelledby='join-label' class='modal fade' id='join' role='dialog' tabindex='-1'>
-  <div class='modal-dialog'>
-    <div class='modal-content'>
-      <form action='https://www.algolia.com/zendesk/auth' method='get'>
-        <div class='modal-header'>
-          <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>&times;</button>
-          <h4 class='modal-title' id='join-label'>Join the beta</h4>
+    <div class='main-content'>
+  <div class='jumbotron text-center'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-sm-12'>
+          <h1 class='row'>
+            <div class='col-xs-12 jumbotron--hero-title jumbotron--algolia-logo'>
+              <img alt='Algolia' src='/zendesk/img/algolia-logo-white.svg' width='190'>
+            </div>
+            <div class='col-xs-12 jumbotron--hero-title'>
+              <small>for</small>
+            </div>
+            <div class='col-xs-12 jumbotron--hero-title jumbotron--zendesk-logo'>
+              <img alt='Zendesk' src='/zendesk/img/zendesk-logo.svg' width='340'>
+            </div>
+          </h1>
         </div>
-        <div class='modal-body'>
-          <p>You&#39;ll first need to be logged in on your
-          <a href="https://www.algolia.com/dashboard">Algolia account</a>
-          in order to use this integration.<br>
-          <a href="https://www.algolia.com/users/sign_up">Click here to create one</a></p>
-          <hr>
-          <div class='form-group'>
-            <label for='join-subdomain'>Zendesk subdomain</label>
-            <input class='form-control' id='join-subdomain' name='subdomain' placeholder='your-zendesk-instance(.zendesk.com)' type='text'>
+      </div>
+      <div class='row'>
+        <div class='col-sm-12'>
+          <p>
+            Level up your Zendesk Help Center by providing
+            <br>
+            your users with an awesome search experience
+          </p>
+        </div>
+      </div>
+      <div class='spacer50'></div>
+      <form action='https://www.algolia.com/zendesk/auth' class='join col-md-8 col-md-offset-2' method='get'>
+        <div class='form-group' style='text-align: left;'>
+          <label for='join-subdomain' style='padding-left: 5px;'>Your Zendesk subdomain</label>
+          <div class='row'>
+            <div class='col-lg-9 col-md-8 col-sm-7'>
+              <input class='form-control input-lg' id='join-subdomain' name='subdomain' placeholder='your-company.zendesk.com' type='text'>
+            </div>
+            <div class='col-lg-3 col-md-4 col-sm-5'>
+              <button class='btn btn-primary btn-lg' type='submit'>Join the beta!</button>
+            </div>
           </div>
-        </div>
-        <div class='modal-footer'>
-          <button class='btn btn-default' data-dismiss='modal' type='button'>Close</button>
-          <button class='btn btn-primary' type='submit'>Submit</button>
         </div>
       </form>
     </div>
   </div>
-</div>
-<div class='main-content'>
-  <div class='jumbotron'>
-    <div class='container'>
-      <h1>Algolia for Zendesk</h1>
-      <div class='row'>
-        <div class='col-sm-8'>
-          <p>Empower your Zendesk Help Center with Algolia Search and provide your users an awesome search experience.</p>
-        </div>
-      </div>
-      <div class='spacer50'></div>
-      <p class='text-center'>
-        <a class='btn btn-primary btn-lg' data-target='#join' data-toggle='modal'>
-          Join the beta
-        </a>
-      </p>
+  <div class='home-section home-section__instant-answers'>
+    <h2 class='headline'>Instant answers</h2>
+    <div class='text-center'>
+      <p>Nothing is more important for your users than to find answers to their problems.<br>
+      Algolia turns your Zendesk Help Center into an <strong>instant knowledge base</strong>,<br>
+      returning relevant answers from the first keystroke.</p>
     </div>
   </div>
-  <div class='container'>
-    <div class='spacer100'></div>
-    <h1 class='headline'>Features</h1>
-    <div class='features'>
+  <div class='home-section home-section__features'>
+    <h2 class='headline'>Features</h2>
+    <div class='container'>
       <div class='row'>
-        <div class='col-sm-4 col-sm-offset-3'>
-          <h3>Auto-suggestions menu</h3>
-          <p>Offer End-Users immediate access to your whole help center from the dropdown menu, whatever your number of sections or articles.</p>
+        <div class='row col-md-6'>
+          <div class='col-md-8 col-sm-9 text-right'>
+            <h3>Auto-suggestions menu</h3>
+            <p>Offer End-Users immediate access to your whole help center from the dropdown menu, whatever your number of sections or articles.</p>
+          </div>
+          <div class='col-md-4 col-sm-3 hidden-xs'>
+            <div class='bubble'>
+              <img src='/zendesk/img/autocompletion-menu.png'>
+            </div>
+          </div>
         </div>
-        <div class='col-sm-3 hidden-xs'>
-          <div class='bubble'>
-            <img src='/zendesk/img/autocompletion-menu.png'>
+        <div class='row col-md-6'>
+          <div class='col-md-4 col-sm-3 hidden-xs'>
+            <div class='bubble'>
+              <img src='/zendesk/img/instantsearch.png'>
+            </div>
+          </div>
+          <div class='col-md-8 col-sm-9'>
+            <h3>Instant & Faceted Search</h3>
+            <p>Have your search results page, navigation and pagination updated in realtime, after each keystroke.</p>
           </div>
         </div>
       </div>
       <div class='row'>
-        <div class='col-sm-3 col-sm-offset-3 hidden-xs'>
-          <div class='bubble'>
-            <img src='/zendesk/img/instantsearch.png'>
+        <div class='row col-md-6'>
+          <div class='col-md-8 col-sm-9 text-right'>
+            <h3>Fast & Relevant</h3>
+            <p>Increase customer satisfaction by serving relevant results, at lightning speed.</p>
+          </div>
+          <div class='col-md-4 col-sm-3 hidden-xs'>
+            <div class='bubble'>
+              <img src='/zendesk/img/relevant.png'>
+            </div>
           </div>
         </div>
-        <div class='col-sm-4'>
-          <h3>Instant & Faceted Search</h3>
-          <p>Have your search results page, navigation and pagination updated in realtime, after each keystroke.</p>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-sm-4 col-sm-offset-3'>
-          <h3>Fast & Relevant</h3>
-          <p>Increase customer satisfaction by serving relevant results, at lightning speed.</p>
-        </div>
-        <div class='col-sm-3 hidden-xs'>
-          <div class='bubble'>
-            <img src='/zendesk/img/relevant.png'>
+        <div class='row col-md-6'>
+          <div class='col-md-4 col-sm-3 hidden-xs'>
+            <div class='bubble'>
+              <img src='/zendesk/img/customizable.png'>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-sm-3 col-sm-offset-3 hidden-xs'>
-          <div class='bubble'>
-            <img src='/zendesk/img/customizable.png'>
+          <div class='col-md-8 col-sm-9'>
+            <h3>Customizable</h3>
+            <p>Our code is open-source and hosted on GitHub, feel free to customize it.</p>
           </div>
-        </div>
-        <div class='col-sm-4'>
-          <h3>Customizable</h3>
-          <p>Our code is open-source and hosted on GitHub, feel free to customize it.</p>
         </div>
       </div>
     </div>
-    <div class='spacer100'></div>
-    <h1 class='headline'>Showcase</h1>
-    <div class='showcases'>
+  </div>
+  <div class='home-section home-section__showcases'>
+    <h2 class='headline'>They're using Algolia</h2>
+    <div class='container'>
+      <div class='text-center'>
+        They changed their Help Center to an instant knowledge base.
+        <br>
+        You can too!
+      </div>
+      <div class='spacer50'></div>
       <div class='row'>
         <div class='col-sm-4'>
           <a class='showcase' href='https://support.aodocs.com/hc/en-us'>
@@ -167,11 +188,50 @@
       </div>
     </div>
   </div>
+  <div class='home-section home-section__join'>
+    <h2 class='headline'>Be ready in minutes!</h2>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-sm-4'>
+          <p>
+            <span class='big-number'>1</span>
+            Enter your Zendesk subdomain below and click &laquo; Join the beta! &raquo;. You'll be sent to your Algolia account
+          </p>
+        </div>
+        <div class='col-sm-4'>
+          <p>
+            <span class='big-number'>2</span>
+            Authorize our application in your Zendesk account and we'll start indexing right away!
+          </p>
+        </div>
+        <div class='col-sm-4'>
+          <p>
+            <span class='big-number'>3</span>
+            Copy the code from <a href="./documentation/">our docs</a> inside your Help Center theme to bring our <b>instant search experience</b> to your users.
+          </p>
+        </div>
+      </div>
+      <div class='spacer50'></div>
+      <form action='https://www.algolia.com/zendesk/auth' class='join col-md-8 col-md-offset-2' method='get'>
+        <div class='form-group' style='text-align: left;'>
+          <label for='join-subdomain' style='padding-left: 5px;'>Your Zendesk subdomain</label>
+          <div class='row'>
+            <div class='col-lg-9 col-md-8 col-sm-7'>
+              <input class='form-control input-lg' id='join-subdomain' name='subdomain' placeholder='your-company.zendesk.com' type='text'>
+            </div>
+            <div class='col-lg-3 col-md-4 col-sm-5'>
+              <button class='btn btn-primary btn-lg' type='submit'>Join the beta!</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 
 
-    <div class="spacer100 bg-white"></div>
+    <div class="spacer50 bg-white"></div>
 <footer class="site-footer">
   <p>
     Designed and built with <i class="fa fa-heart"></i> by <a href="https://www.algolia.com/?utm_medium=social-owned&utm_source=documentation+search&utm_campaign=homepage"><img src="/zendesk/img/logo-algolia-dark.png" alt="Algolia" height="20"></a>

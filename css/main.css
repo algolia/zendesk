@@ -3867,8 +3867,17 @@ header.site-header {
       header.site-header nav.navbar .navbar-collapse.in li {
         padding-bottom: 1em; }
     header.site-header nav.navbar .navbar-brand {
+      font-size: 1em;
       color: white;
       z-index: 1; }
+    header.site-header nav.navbar .navbar-brand--logo {
+      display: inline-block;
+      height: 1.5em; }
+    header.site-header nav.navbar .navbar-brand--subtitle {
+      display: inline-block;
+      margin-left: 10px; }
+    header.site-header nav.navbar .navbar--github-link {
+      padding-top: 12px; }
     header.site-header nav.navbar .navbar-header {
       position: relative;
       z-index: 2; }
@@ -3895,57 +3904,105 @@ h2 {
   letter-spacing: 1px;
   margin-bottom: 1em; }
 
-.headline {
-  text-align: center; }
+.join p {
+  line-height: 32px;
+  font-weight: 400; }
+.join button {
+  width: 100%;
+  background-color: #a2dc00; }
+.join button:hover {
+  background-color: #8cbe00; }
 
 .jumbotron {
-  background: #eee5d9 url(../img/zendesk-logo.png) scroll 100% 40px no-repeat;
-  color: #363636; }
+  background-color: #74A300;
+  background: -moz-radial-gradient(center, ellipse cover, #78a300 0%, #577f00 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #78a300), color-stop(100%, #577f00));
+  background: -webkit-radial-gradient(center, ellipse cover, #78a300 0%, #577f00 100%);
+  background: -o-radial-gradient(center, ellipse cover, #78a300 0%, #577f00 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #78a300 0%, #577f00 100%);
+  background: radial-gradient(ellipse at center, #78a300 0%, #577f00 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78a300', endColorstr='#577f00', GradientType=1 );
+  margin-bottom: 0;
+  color: white;
+  -webkit-font-smoothing: antialiased; }
 
-.headline:after {
-  display: block;
-  content: ' ';
-  height: 10px;
-  border-bottom: 2px solid #74A633;
-  margin: 0 auto 1em auto;
-  width: 30px; }
+@media (min-width: 768px) {
+  .jumbotron h1 {
+    display: inline-block; }
 
-.features .row {
-  margin-bottom: 1em; }
-  .features .row p {
-    color: #BABDC6; }
-.features .bubble {
-  border: 10px solid rgba(194, 215, 136, 0.5);
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  overflow: hidden; }
-  .features .bubble img {
-    width: 200%;
-    margin-left: 10px; }
+  .jumbotron--hero-title {
+    display: inline-block;
+    width: auto; }
 
-.showcases {
-  text-align: center; }
-  .showcases .showcase {
+  .jumbotron--algolia-logo {
+    margin-right: 13px; }
+
+  .jumbotron--zendesk-logo {
+    margin-left: 4px; } }
+.jumbotron--zendesk-logo img {
+  position: relative;
+  top: -0.26em;
+  max-width: 95%; }
+
+.headline {
+  text-align: center;
+  margin-bottom: 40px; }
+  .headline:after {
     display: block;
-    border: 1px solid #ccc;
-    -webkit-box-shadow: 6px 6px 6px -6px black;
-    -moz-box-shadow: 6px 6px 6px -6px black;
-    box-shadow: 6px 6px 6px -6px black;
+    content: '';
+    border-bottom: 2px solid #74A633;
+    margin: 0.4em auto 1em auto;
+    width: 30px; }
+
+.home-section {
+  padding: 50px 0; }
+
+.home-section__instant-answers {
+  background-color: #FAFAFA; }
+
+.home-section__features .row {
+  margin-bottom: 1em; }
+  .home-section__features .row p {
+    color: #555555; }
+.home-section__features .bubble {
+  border: 2px solid #74A633;
+  border-radius: 50%;
+  overflow: hidden; }
+  .home-section__features .bubble img {
+    width: 185%;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: -90%; }
+
+.home-section__showcases {
+  background-color: #FAFBFD;
+  text-align: center; }
+  .home-section__showcases .showcase {
+    display: block;
+    border: 1px solid #74A633;
     height: 200px;
     overflow: hidden; }
-    .showcases .showcase img {
+    .home-section__showcases .showcase img {
       max-width: 100%; }
-    .showcases .showcase.fixme {
+    .home-section__showcases .showcase.fixme {
       width: 100%;
       height: 200px;
-      background: #efefef;
+      color: #74A633;
+      background-color: white;
       line-height: 200px;
       font-size: 2em; }
 
-#join {
-  top: 15%;
-  outline: none; }
+.home-section__join p {
+  line-height: 1.4em;
+  padding: 0 2em; }
+.home-section__join .big-number {
+  font-size: 2.8em;
+  line-height: 1em;
+  margin-right: .2em;
+  font-weight: bolder;
+  color: #74A633;
+  float: left;
+  display: inline-block; }
 
 .highlight {
   background-color: #fbf8f5;
@@ -3953,10 +4010,6 @@ h2 {
 
 p, ul {
   line-height: 2em; }
-
-h2 {
-  margin-top: 2em;
-  border-bottom: 1px solid #74A633; }
 
 h3 {
   font-size: 1.2em;
