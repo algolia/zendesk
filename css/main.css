@@ -4003,6 +4003,8 @@ h2 {
   color: #74A633;
   float: left;
   display: inline-block; }
+.home-section__join button {
+  background-color: #78A300; }
 
 .highlight {
   background-color: #fbf8f5;
