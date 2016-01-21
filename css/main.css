@@ -3925,6 +3925,8 @@ h2 {
   margin-bottom: 0;
   color: white;
   -webkit-font-smoothing: antialiased; }
+  .jumbotron p {
+    line-height: 32px; }
 
 @media (min-width: 768px) {
   .jumbotron h1 {
@@ -3994,7 +3996,8 @@ h2 {
 
 .home-section__join p {
   line-height: 1.4em;
-  padding: 0 2em; }
+  padding: 0 2em;
+  font-family: Raleway, sans-serif; }
 .home-section__join .big-number {
   font-size: 2.8em;
   line-height: 1em;
@@ -4002,7 +4005,8 @@ h2 {
   font-weight: bolder;
   color: #74A633;
   float: left;
-  display: inline-block; }
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 .home-section__join button {
   background-color: #78A300; }
 
@@ -4011,7 +4015,7 @@ h2 {
   padding: 20px; }
 
 p, ul {
-  line-height: 2em; }
+  line-height: 1.625em; }
 
 h3 {
   font-size: 1.2em;
