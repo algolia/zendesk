@@ -149,6 +149,36 @@
 
 <p>We do not index community forums at the moment. If you’re using them, you’ll probably want to disable <code>instantsearch</code> by setting <code>enabled: false</code>.</p>
 
+<h3 id="customizing-the-css">Customizing the CSS</h3>
+
+<p>If you want to change the CSS styling of the search we provide, there’s absolutely no issue.<br />
+To do this:</p>
+
+<ul>
+  <li>You should have a look at the <a href="https://github.com/algolia/algoliasearch-zendesk/blob/master/app/css/index.scss">scss file</a> to see all the rules we’re using</li>
+  <li>Add a <code>&lt;style&gt;</code> tag after the <code>&lt;link&gt;</code> tag you’ve already added in your <em>Document Head</em> template<br />
+We ask you to do this because the CSS code in the customization panel is included <strong>before</strong> the <em>Document Head</em> template</li>
+  <li>Fix the versions of the JavaScript and CSS files by replacing the <code>/1/</code> in the URLs by <code>/1.X/</code> or <code>/1.X.Y/</code>. (Current version: <a href="https://github.com/algolia/algoliasearch-zendesk/releases"><img src="https://img.shields.io/github/tag/algolia/algoliasearch-zendesk.svg" alt="tag" /></a>)<br />
+Indeed, we might do some small CSS changes between minor versions.</li>
+</ul>
+
+<p>In the end, you should have something along these lines in your <em>Document Head</em> template:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;link</span> <span style="color:#b48">rel</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">stylesheet</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text/css</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">href</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//cdn.jsdelivr.net/algoliasearch.zendesk-hc/CURRENT_VERSION/algoliasearch.zendesk-hc.min.css</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;style&gt;</span>
+<span style="background-color:hsla(0,0%,0%,0.07);color:black">  <span style="color:#B06;font-weight:bold">.aa-dropdown-menu</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#0A0">#ccc</span>;
+  }</span>
+<span style="color:#070;font-weight:bold">&lt;/style&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text/javascript</span><span style="color:#710">&quot;</span></span> <span style="color:#b48">src</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">//cdn.jsdelivr.net/algoliasearch.zendesk-hc/CURRENT_VERSION/algoliasearch.zendesk-hc.min.js</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span><span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;script</span> <span style="color:#b48">type</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">text/javascript</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+<span style="background-color:hsla(0,0%,0%,0.07);color:black">  algoliasearchZendeskHC(<span style="color:#777">/* ... */</span>);</span>
+<span style="color:#070;font-weight:bold">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
+
 <h3 id="supporting-multiple-languages">Supporting multiple languages</h3>
 
 <p>Out of the box, the library limits the results to the currently selected language.<br />
