@@ -3395,8 +3395,7 @@ pre {
   border-right: 1px solid #dddddd;
   color: #cccccc;
   user-select: none;
-  padding: 0 5px;
-  overflow: hidden; }
+  padding: 0 5px; }
 
 p code, li code, td code {
   color: #666666;
