@@ -152,10 +152,9 @@
     <span class="na">indexPrefix</span><span class="p">:</span> <span class="s1">'zendesk_'</span><span class="p">,</span>    <span class="c1">// or your custom &lt;INDEX_PREFIX&gt;</span>
     <span class="na">baseUrl</span><span class="p">:</span> <span class="s1">'/hc/'</span><span class="p">,</span>            <span class="c1">// the base URL of your Help Center</span>
     <span class="na">poweredBy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>            <span class="c1">// show the "Search by Algolia" link (required if you're on Algolia's FREE plan)</span>
-    <span class="na">colors</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">primary</span><span class="p">:</span> <span class="s1">'#D4D4D4'</span><span class="p">,</span>       <span class="c1">// the primary color</span>
-      <span class="na">secondary</span><span class="p">:</span> <span class="s1">'#D4D4D4'</span>      <span class="c1">// the secondary color</span>
-    <span class="p">},</span>
+    <span class="na">color</span><span class="p">:</span> <span class="s1">'#D4D4D4'</span><span class="p">,</span>           <span class="c1">// main color (used for links)</span>
+    <span class="na">highlightColor</span><span class="p">:</span> <span class="s1">'#D4D4D4'</span><span class="p">,</span>  <span class="c1">// highlight color to emphasize matching text</span>
+    <span class="na">responsive</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>          <span class="c1">// responsive instantsearch page</span>
     <span class="na">autocomplete</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>            <span class="c1">// is the autocomplete feature enabled?</span>
       <span class="na">inputSelector</span><span class="p">:</span> <span class="s1">'#query'</span><span class="p">,</span>  <span class="c1">// the DOM selector to select the search box</span>
@@ -175,6 +174,7 @@
       <span class="na">article</span><span class="p">:</span> <span class="s1">'Article'</span><span class="p">,</span>
       <span class="na">articles</span><span class="p">:</span> <span class="s1">'Articles'</span><span class="p">,</span>
       <span class="na">categories</span><span class="p">:</span> <span class="s1">'Categories'</span><span class="p">,</span>
+      <span class="na">filter</span><span class="p">:</span> <span class="s1">'Filter results'</span><span class="p">,</span>
       <span class="na">found_in</span><span class="p">:</span> <span class="s1">'Found in'</span><span class="p">,</span>
       <span class="na">no_result</span><span class="p">:</span> <span class="s1">'No result'</span><span class="p">,</span>
       <span class="na">placeholder_autocomplete</span><span class="p">:</span> <span class="s1">'Search in sections and articles'</span><span class="p">,</span>
@@ -315,7 +315,11 @@ However, some constant strings like the ones used in the sentence “12 results 
 47
 48
 49
-50</pre></td><td class="code"><pre><span class="nx">translations</span><span class="err">:</span> <span class="p">{</span>
+50
+51
+52
+53
+54</pre></td><td class="code"><pre><span class="nx">translations</span><span class="err">:</span> <span class="p">{</span>
   <span class="nl">article</span><span class="p">:</span> <span class="p">{</span>
     <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Article'</span><span class="p">,</span>
     <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Article'</span>
@@ -327,6 +331,10 @@ However, some constant strings like the ones used in the sentence “12 results 
   <span class="nx">categories</span><span class="err">:</span> <span class="p">{</span>
     <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Categories'</span><span class="p">,</span>
     <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Catégories'</span>
+  <span class="p">},</span>
+  <span class="nx">filter</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Filter results'</span><span class="p">,</span>
+    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Filtrer les résultats'</span>
   <span class="p">},</span>
   <span class="nx">found_in</span><span class="err">:</span> <span class="p">{</span>
     <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Found in'</span><span class="p">,</span>
