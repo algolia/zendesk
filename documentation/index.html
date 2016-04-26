@@ -77,13 +77,13 @@
 
 <ol>
   <li>Copy the code displayed on the <strong>Zendesk Connector</strong> page in your Algolia account</li>
-  <li>Go to your Zendesk Help Center</li>
+  <li>Head to your Zendesk Help Center</li>
   <li>Click <strong>General &gt; Customize the design</strong> in the top bar</li>
-  <li>In the <strong>Theme</strong> section, click on “Edit theme”</li>
+  <li>In the <strong>Theme</strong> section, click on <strong>Edit theme</strong></li>
   <li>In the top left corner dropdown, select the <strong>Document Head</strong> template</li>
-  <li>Copy/Paste the lines you copied before at the end of the template</li>
-  <li>Save and ensure everything is working</li>
-  <li>Click <strong>Publish Theme</strong></li>
+  <li>Paste at the end of the template the code you’ve just copied</li>
+  <li>Click <strong>Save</strong> and ensure everything is working using the preview on the right (if you have some small CSS issues, <a href="#customizing-the-css">read this part</a>)</li>
+  <li>Click <strong>Publish Changes</strong></li>
 </ol>
 
 <h2 id="available-options">Available options</h2>
@@ -138,7 +138,8 @@
 46
 47
 48
-49</pre></td><td class="code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
+49
+50</pre></td><td class="code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
   <span class="nx">algoliasearchZendeskHC</span><span class="p">({</span>
@@ -152,9 +153,10 @@
     <span class="na">indexPrefix</span><span class="p">:</span> <span class="s1">'zendesk_'</span><span class="p">,</span>    <span class="c1">// or your custom &lt;INDEX_PREFIX&gt;</span>
     <span class="na">baseUrl</span><span class="p">:</span> <span class="s1">'/hc/'</span><span class="p">,</span>            <span class="c1">// the base URL of your Help Center</span>
     <span class="na">poweredBy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>            <span class="c1">// show the "Search by Algolia" link (required if you're on Algolia's FREE plan)</span>
+    <span class="na">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>               <span class="c1">// debug mode prevents the autocomplete to close when trying to inspect it</span>
     <span class="na">color</span><span class="p">:</span> <span class="s1">'#D4D4D4'</span><span class="p">,</span>           <span class="c1">// main color (used for links)</span>
     <span class="na">highlightColor</span><span class="p">:</span> <span class="s1">'#D4D4D4'</span><span class="p">,</span>  <span class="c1">// highlight color to emphasize matching text</span>
-    <span class="na">responsive</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>          <span class="c1">// responsive instantsearch page</span>
+    <span class="na">responsive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>           <span class="c1">// responsive instantsearch page</span>
     <span class="na">autocomplete</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>            <span class="c1">// is the autocomplete feature enabled?</span>
       <span class="na">inputSelector</span><span class="p">:</span> <span class="s1">'#query'</span><span class="p">,</span>  <span class="c1">// the DOM selector to select the search box</span>
@@ -193,12 +195,16 @@
 
 <h2 id="customizing-the-css">Customizing the CSS</h2>
 
-<p>If you want to customize the look &amp; feel of the search, you can follow the following steps:</p>
+<p>It is definitely possible that, when you install the application, it doesn’t exactly display as you expect.  <br />
+No worries, these are usually just a few conflicting rules between your design and our integration.</p>
+
+<p>You might also just want to change the look &amp; feel of the search.</p>
+
+<p>Either way, just follow the following steps:</p>
 
 <ul>
   <li>Ensure you read the <a href="https://github.com/algolia/algoliasearch-zendesk/blob/master/app/css/index.scss">SCSS source file</a> to see all the rules we’re using</li>
-  <li>Add a <code class="highlighter-rouge">&lt;style&gt;</code> tag after the <code class="highlighter-rouge">&lt;link&gt;</code> tag you’ve already added in your <strong>Document Head</strong> template<br />
-We ask you to do this because the CSS code in the customization panel is included <strong>before</strong> the <strong>Document Head</strong> template</li>
+  <li>Add a <code class="highlighter-rouge">&lt;style&gt;</code> tag after the <code class="highlighter-rouge">&lt;link&gt;</code> tag you’ve already added in your <strong>Document Head</strong> template and add your custom CSS here</li>
 </ul>
 
 <p><strong>Example:</strong></p>
@@ -226,6 +232,9 @@ We ask you to do this because the CSS code in the customization panel is include
 </div>
 </div>
 
+<p><strong>Note:</strong> You might have some trouble trying to customize the autocomplete menu because it automatically closes when you try to Inspect it.<br />
+Just set <code class="highlighter-rouge">debug: true</code> to avoid this behaviour.</p>
+
 <h2 id="supporting-multiple-languages">Supporting multiple languages</h2>
 
 <p>Out of the box, the library limits the results to the currently selected language.<br />
@@ -246,19 +255,19 @@ However, some constant strings like the ones used in the sentence “12 results 
 11
 12
 13
-14</pre></td><td class="code"><pre><span class="nx">translations</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nl">article</span><span class="p">:</span> <span class="s1">'Article'</span><span class="p">,</span>
-  <span class="nx">articles</span><span class="err">:</span> <span class="s1">'Articles'</span><span class="p">,</span>
-  <span class="nx">categories</span><span class="err">:</span> <span class="s1">'Catégories'</span><span class="p">,</span>
-  <span class="nx">found_in</span><span class="err">:</span> <span class="s1">'Trouvés en'</span><span class="p">,</span>
-  <span class="nx">no_result</span><span class="err">:</span> <span class="s1">'Aucun résultat'</span><span class="p">,</span>
-  <span class="nx">placeholder_autocomplete</span><span class="err">:</span> <span class="s1">'Rechercher dans les articles et sections'</span><span class="p">,</span>
-  <span class="nx">placeholder_instantsearch</span><span class="err">:</span> <span class="s1">'Rechercher dans les articles'</span><span class="p">,</span>
-  <span class="nx">result</span><span class="err">:</span> <span class="s1">'Résultat'</span><span class="p">,</span>
-  <span class="nx">results</span><span class="err">:</span> <span class="s1">'Résultats'</span><span class="p">,</span>
-  <span class="nx">search_by</span><span class="err">:</span> <span class="s1">'Recherche par'</span><span class="p">,</span>
-  <span class="nx">sections</span><span class="err">:</span> <span class="s1">'Sections'</span><span class="p">,</span>
-  <span class="nx">tags</span><span class="err">:</span> <span class="s1">'Tags'</span>
+14</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
+  <span class="na">article</span><span class="o">:</span> <span class="s">'Article'</span><span class="p">,</span>
+  <span class="na">articles</span><span class="o">:</span> <span class="s">'Articles'</span><span class="p">,</span>
+  <span class="na">categories</span><span class="o">:</span> <span class="s">'Catégories'</span><span class="p">,</span>
+  <span class="na">found_in</span><span class="o">:</span> <span class="s">'Trouvés en'</span><span class="p">,</span>
+  <span class="na">no_result</span><span class="o">:</span> <span class="s">'Aucun résultat'</span><span class="p">,</span>
+  <span class="na">placeholder_autocomplete</span><span class="o">:</span> <span class="s">'Rechercher dans les articles et sections'</span><span class="p">,</span>
+  <span class="na">placeholder_instantsearch</span><span class="o">:</span> <span class="s">'Rechercher dans les articles'</span><span class="p">,</span>
+  <span class="na">result</span><span class="o">:</span> <span class="s">'Résultat'</span><span class="p">,</span>
+  <span class="na">results</span><span class="o">:</span> <span class="s">'Résultats'</span><span class="p">,</span>
+  <span class="na">search_by</span><span class="o">:</span> <span class="s">'Recherche par'</span><span class="p">,</span>
+  <span class="na">sections</span><span class="o">:</span> <span class="s">'Sections'</span><span class="p">,</span>
+  <span class="na">tags</span><span class="o">:</span> <span class="s">'Tags'</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
@@ -319,58 +328,58 @@ However, some constant strings like the ones used in the sentence “12 results 
 51
 52
 53
-54</pre></td><td class="code"><pre><span class="nx">translations</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nl">article</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Article'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Article'</span>
+54</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
+  <span class="na">article</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Article'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Article'</span>
   <span class="p">},</span>
-  <span class="nx">articles</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Articles'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Articles'</span>
+  <span class="na">articles</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Articles'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Articles'</span>
   <span class="p">},</span>
-  <span class="nx">categories</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Categories'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Catégories'</span>
+  <span class="na">categories</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Categories'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Catégories'</span>
   <span class="p">},</span>
-  <span class="nx">filter</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Filter results'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Filtrer les résultats'</span>
+  <span class="na">filter</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Filter results'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Filtrer les résultats'</span>
   <span class="p">},</span>
-  <span class="nx">found_in</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Found in'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Trouvés en'</span>
+  <span class="na">found_in</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Found in'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Trouvés en'</span>
   <span class="p">},</span>
-  <span class="nx">no_result</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'No result'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Aucun résultat'</span>
+  <span class="na">no_result</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'No result'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Aucun résultat'</span>
   <span class="p">},</span>
-  <span class="nx">placeholder_autocomplete</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Search in articles and sections'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Rechercher dans les articles et sections'</span>
+  <span class="na">placeholder_autocomplete</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search in articles and sections'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Rechercher dans les articles et sections'</span>
   <span class="p">},</span>
-  <span class="nx">placeholder_instantsearch</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Search in articles'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Rechercher dans les articles'</span>
+  <span class="na">placeholder_instantsearch</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search in articles'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Rechercher dans les articles'</span>
   <span class="p">},</span>
-  <span class="nx">result</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Result'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Résultat'</span>
+  <span class="na">result</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Result'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Résultat'</span>
   <span class="p">},</span>
-  <span class="nx">results</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Results'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Résultats'</span>
+  <span class="na">results</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Results'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Résultats'</span>
   <span class="p">},</span>
-  <span class="nx">search_by</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Search by'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Recherche par'</span>
+  <span class="na">search_by</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search by'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Recherche par'</span>
   <span class="p">},</span>
-  <span class="nx">sections</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Sections'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Sections'</span>
+  <span class="na">sections</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Sections'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Sections'</span>
   <span class="p">},</span>
-  <span class="nx">tags</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s1">'en-us'</span><span class="err">:</span> <span class="s1">'Tags'</span><span class="p">,</span>
-    <span class="s1">'fr'</span><span class="err">:</span> <span class="s1">'Tags'</span>
+  <span class="na">tags</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Tags'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Tags'</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
