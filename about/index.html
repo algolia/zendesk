@@ -19,20 +19,23 @@
   <nav class="navbar navbar-default  navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#instant-search-nav">
-          Menu&nbsp;&nbsp;<i class="fa fa-bars"></i>
-        </button>
-        <a class="navbar-brand" href="/zendesk/">
-          <img class="navbar-brand--logo" src="/zendesk/img/algolia-logo.svg" alt="Algolia" style="" />
-          <div class="navbar-brand--subtitle">
-            
-              for Zendesk
-            
-          </div>
+        <a class="logo-community" href="https://community.algolia.com/">
+          <img src="https://res.cloudinary.com/hilnmyskv/image/upload/logo-community-inline-dark.svg" width="150" alt="Algolia Community" />
+        </a>
+        <a class="project-title" href="/zendesk/">
+          Zendesk
         </a>
       </div>
       <div id="instant-search-nav" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li style="display: none">
+            <form class="form search-form" action="#">
+            
+              <input class="form-control" placeholder="Search in the documentation" type="text" id="doc-search" />
+            
+              <div class="search-icon"><i class="fa fa-search"></i></div>
+            </form>
+          </li>
           
           
             <li >
@@ -43,9 +46,10 @@
               <a href="/zendesk/about/" title="">About</a>
             </li>
           
-          <li class="text-xl">
-              <a class="navbar--github-link" href="https://github.com/algolia/algoliasearch-zendesk" title="GitHub">
-                <i class="fa fa-github"></i>
+            <li>
+              <a href="https://github.com/algolia/algoliasearch-zendesk" title="See more, open issues and get answers in our Github repository">
+                <i class="fa fa-github hidden-xs"></i>
+                <span class="visible-xs">View project on github</span>
               </a>
             </li>
         </ul>
