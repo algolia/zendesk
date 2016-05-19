@@ -4062,6 +4062,12 @@ h2 {
   margin-bottom: .5em;
   font-weight: bold;
   text-align: center; }
+  .page-documentation h2 .anchor {
+    display: none; }
+    .page-documentation h2 .anchor:hover {
+      text-decoration: none; }
+  .page-documentation h2:hover .anchor {
+    display: inline; }
   .page-documentation h2:after {
     display: block;
     content: '';
@@ -4072,6 +4078,9 @@ h2 {
 .alert-info a, .alert-info strong {
   color: #74a633;
   font-weight: bold; }
+
+img {
+  max-width: 100%; }
 
 footer.site-footer {
   padding-top: 2em;
