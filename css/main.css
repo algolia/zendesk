@@ -3743,8 +3743,9 @@ sub {
     display: none;
     visibility: hidden;
     position: absolute;
-    top: 16px;
-    right: 8px; }
+    top: 12px;
+    right: 8px;
+    color: #000; }
     .ac-nav select:not(.device) {
       background: linear-gradient(#efefef, #ccc);
       color: #0a1724; }
@@ -4023,8 +4024,10 @@ img {
     background: #fb366e;
     color: #fff; }
   .btn.btn-cta {
+    display: inline-block;
     max-width: 230px;
-    margin: 32px auto; }
+    padding: 0 4em;
+    margin: 32px 8px; }
   .btn.btn-grey {
     background: #d4d9de;
     border-color: #becce0;
@@ -4034,6 +4037,9 @@ img {
   .btn.btn-black {
     background: #232e3a;
     border-color: #1f3b5d; }
+  .btn.btn-transparent {
+    background: transparent;
+    border-color: #fff; }
   .btn.btn-green {
     background: #78A300;
     border-color: #658a00; }
