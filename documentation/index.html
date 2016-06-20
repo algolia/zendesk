@@ -133,7 +133,27 @@
 27
 28
 29
-30</pre></td><td class="code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre></td><td class="code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
   <span class="nx">algoliasearchZendeskHC</span><span class="p">({</span>
@@ -160,7 +180,27 @@
       <span class="na">enabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="na">tagsLimit</span><span class="p">:</span> <span class="mi">15</span>             <span class="c1">// Maximum number of tags to display</span>
     <span class="p">},</span>
-    <span class="na">translations</span><span class="p">:</span> <span class="p">{}</span>            <span class="c1">// Translation strings</span>
+    <span class="na">translations</span><span class="p">:</span> <span class="p">{</span>             <span class="c1">// These accept strings or objects associating locale with value</span>
+                                <span class="c1">// e.g. {</span>
+                                <span class="c1">//   found_in: {</span>
+                                <span class="c1">//     'en-us': 'Found in',</span>
+                                <span class="c1">//     'fr': 'En'</span>
+                                <span class="c1">//   }</span>
+                                <span class="c1">// }</span>
+      <span class="na">article</span><span class="p">:</span> <span class="s1">'Article'</span><span class="p">,</span>
+      <span class="na">articles</span><span class="p">:</span> <span class="s1">'Articles'</span><span class="p">,</span>
+      <span class="na">categories</span><span class="p">:</span> <span class="s1">'Categories'</span><span class="p">,</span>
+      <span class="na">filter</span><span class="p">:</span> <span class="s1">'Filter results'</span><span class="p">,</span>
+      <span class="na">found_in</span><span class="p">:</span> <span class="s1">'Found in'</span><span class="p">,</span>
+      <span class="na">no_result</span><span class="p">:</span> <span class="s1">'No result'</span><span class="p">,</span>
+      <span class="na">placeholder_autocomplete</span><span class="p">:</span> <span class="s1">'Search in sections and articles'</span><span class="p">,</span>
+      <span class="na">placeholder_instantsearch</span><span class="p">:</span> <span class="s1">'Search in articles'</span><span class="p">,</span>
+      <span class="na">result</span><span class="p">:</span> <span class="s1">'Result'</span><span class="p">,</span>
+      <span class="na">results</span><span class="p">:</span> <span class="s1">'Results'</span><span class="p">,</span>
+      <span class="na">search_by</span><span class="p">:</span> <span class="s1">'Search by'</span><span class="p">,</span>
+      <span class="na">sections</span><span class="p">:</span> <span class="s1">'Sections'</span><span class="p">,</span>
+      <span class="na">tags</span><span class="p">:</span> <span class="s1">'Tags'</span>
+    <span class="p">}</span>
   <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></td></tr></tbody></table>
@@ -211,80 +251,10 @@ Just set <code class="highlighter-rouge">debug: true</code> to avoid this behavi
 
 <h2 id="supporting-multiple-languages">Supporting multiple languages</h2>
 
-<h3 id="description">Description</h3>
+<p>Out of the box, the library limits the results to the currently selected language.<br />
+However, some constant strings like the ones used in the sentence “12 results found in 1ms” need to be translated in your language. In order to do so, you need to use the <code class="highlighter-rouge">translations</code> parameter described in the documentation above.</p>
 
-<p>This library supports out of the box Help Centers with multiple languages.</p>
-
-<ol>
-  <li>
-    <p>The results sent to the user are always limited to the ones in the currently selected locale.</p>
-  </li>
-  <li>
-    <p>Some constant strings like the ones used in the sentence “12 results found in 1ms” need to be translated.<br />
-The library already supports these locales:</p>
-
-    <ul>
-      <li><strong>ar</strong>: العربية / Arabic</li>
-      <li><strong>ar-eg</strong>: العربية (مصر) / Arabic (Egypt)</li>
-      <li><strong>bg</strong>: Български / Bulgarian</li>
-      <li><strong>cs</strong>: Čeština / Czech</li>
-      <li><strong>da</strong>: Dansk / Danish</li>
-      <li><strong>de</strong>: Deutsch / German</li>
-      <li><strong>de-at</strong>: Deutsch (Österreich) / German (Austria)</li>
-      <li><strong>de-ch</strong>: Deutsch (Schweiz) / German (Switzerland)</li>
-      <li><strong>el</strong>: Ελληνικά / Greek</li>
-      <li><strong>en-au</strong>: English (Australia)</li>
-      <li><strong>en-ca</strong>: English (Canada)</li>
-      <li><strong>en-gb</strong>: English (Great Britain)</li>
-      <li><strong>en-ie</strong>: English (Ireland)</li>
-      <li><strong>en-us</strong>: English (United States)</li>
-      <li><strong>es</strong>: Español / Spanish</li>
-      <li><strong>es-es</strong>: Español (España) / Spanish (Spain)</li>
-      <li><strong>es-419</strong>: Español (Latinoamérica) / Spanish (Latin America)</li>
-      <li><strong>fi</strong>: Suomi / Finnish</li>
-      <li><strong>fr</strong>: Français / French</li>
-      <li><strong>fr-be</strong>: Français (Belgique) / French (Belgium)</li>
-      <li><strong>fr-ca</strong>: Français (Canada) / French (Canada)</li>
-      <li><strong>fr-ch</strong>: Français (Suisse) / French (Switzerland)</li>
-      <li><strong>fr-fr</strong>: Français (France) / French (France)</li>
-      <li><strong>hu</strong>: Magyar / Hungarian</li>
-      <li><strong>id</strong>: Bahasa Indonesia / Indonesian</li>
-      <li><strong>it</strong>: Italiano / Italian</li>
-      <li><strong>ja</strong>: 日本語 / Japanese</li>
-      <li><strong>ko</strong>: 한국어 / Korean</li>
-      <li><strong>nl</strong>: Nederlands / Dutch</li>
-      <li><strong>nl-be</strong>: Nederlands (België) / Dutch (Belgium)</li>
-      <li><strong>no</strong>: Norsk / Norwegian</li>
-      <li><strong>pl</strong>: Polski / Polish</li>
-      <li><strong>pt</strong>: Português / Portuguese</li>
-      <li><strong>pt-br</strong>: Português do Brasil / Brazilian Portuguese</li>
-      <li><strong>ro</strong>: Română / Romanian</li>
-      <li><strong>ru</strong>: Русский / Russian</li>
-      <li><strong>sk</strong>: Slovenčina / Slovak</li>
-      <li><strong>sv</strong>: Svenska / Swedish</li>
-      <li><strong>th</strong>: ไทย / Thai</li>
-      <li><strong>tr</strong>: Türkçe / Turkish</li>
-      <li><strong>uk</strong>: Українська / Ukrainian</li>
-      <li><strong>vi</strong>: Tiếng Việt / Vietnamese</li>
-      <li><strong>zh-cn</strong>: 简体中文 / Simplified Chinese</li>
-      <li><strong>zh-tw</strong>: 繁體中文 / Traditional Chinese</li>
-    </ul>
-
-    <p>If you want to support another locale, please help us by <a href="https://github.com/algolia/algoliasearch-zendesk/issues/new?title=Missing%20locale%3A%20%5Ben-us%5D&amp;body=%3C!%E2%88%92%E2%88%92%0A%20%20To%20improve%20the%20extension%2C%20we%20need%20your%20help!%0A%20%20We%20only%20need%20to%20know%20how%20to%20write%20a%20few%20sentences%20in%20the%20language%20you%20want%20us%20to%20add.%0A%20%20Can%20you%20help%20us%20translate%20them%3F%20%3A)%0A%E2%88%92%E2%88%92%3E%0A%0ATranslations%3A%0A%0A%60%60%60txt%0ASearch%20in%20our%20articles%3A%20%0ASearch%20by%20Algolia%3A%20%0ANo%20result%20found%20for%20%22xxx%22%3A%20%0A%22change%20your%20query%22%20or%20%22clear%20your%20filters%22%3A%20%0A1%20result%20found%20in%20XXXms%3A%20%0A2%2C000%20results%20found%20in%20XXXms%3A%20%0ACategories%3A%20%0ATags%20(in%20the%20%22Labels%22%20meaning)%3A%20%0AFilter%20results%3A%20%0A%60%60%60%0A%0AIs%20there%20more%20than%201%20plural%20form%3F%20%5BYes%2FNo%5D%0AHow%20do%20you%20write%20big%20numbers%3F%20%5B20%2C000%5D">opening an issue on GitHub</a>.</p>
-  </li>
-</ol>
-
-<!--
-  In browser console edition of this link:
-
-  var body = encodeURIComponent("\u003C!\u2212\u2212\n  To improve the extension, we need your help!\n  We only need to know how to write a few sentences in the language you want us to add.\n  Can you help us translate them? :)\n\u2212\u2212\u003E\n\nTranslations:\n\n```txt\nSearch in our articles: \nSearch by Algolia: \nNo result found for \"xxx\": \n\"change your query\" or \"clear your filters\": \n1 result found in XXXms: \n2,000 results found in XXXms: \nCategories: \nTags (in the \"Labels\" meaning): \nFilter results: \n```\n\nIs there more than 1 plural form? [Yes/No]\nHow do you write big numbers? [20,000]");
-  var title = encodeURIComponent("Missing locale: [en-us]")
-  "https://github.com/algolia/algoliasearch-zendesk/issues/new?title=" + title + "&body=" + body
--->
-
-<h3 id="modifying-translations">Modifying translations</h3>
-
-<p>If some translations don’t fit what you want, you can change them using this syntax:</p>
+<p>If you’re using only one language in your Help Center, just pass the strings of this specific language. For example, for French, you might want to pass:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -292,18 +262,32 @@ The library already supports these locales:</p>
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
-  <span class="na">placeholder</span><span class="o">:</span> <span class="p">{</span>
-    <span class="na">de</span><span class="o">:</span> <span class="s">'In unseren Help Center suchen'</span><span class="p">,</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search in our Help Center'</span><span class="p">,</span>
-    <span class="na">fr</span><span class="o">:</span> <span class="s">'Recherchez dans notre Help Center'</span>
-  <span class="p">}</span>
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
+  <span class="na">article</span><span class="o">:</span> <span class="s">'Article'</span><span class="p">,</span>
+  <span class="na">articles</span><span class="o">:</span> <span class="s">'Articles'</span><span class="p">,</span>
+  <span class="na">categories</span><span class="o">:</span> <span class="s">'Catégories'</span><span class="p">,</span>
+  <span class="na">found_in</span><span class="o">:</span> <span class="s">'Trouvés en'</span><span class="p">,</span>
+  <span class="na">no_result</span><span class="o">:</span> <span class="s">'Aucun résultat'</span><span class="p">,</span>
+  <span class="na">placeholder_autocomplete</span><span class="o">:</span> <span class="s">'Rechercher dans les articles et sections'</span><span class="p">,</span>
+  <span class="na">placeholder_instantsearch</span><span class="o">:</span> <span class="s">'Rechercher dans les articles'</span><span class="p">,</span>
+  <span class="na">result</span><span class="o">:</span> <span class="s">'Résultat'</span><span class="p">,</span>
+  <span class="na">results</span><span class="o">:</span> <span class="s">'Résultats'</span><span class="p">,</span>
+  <span class="na">search_by</span><span class="o">:</span> <span class="s">'Recherche par'</span><span class="p">,</span>
+  <span class="na">sections</span><span class="o">:</span> <span class="s">'Sections'</span><span class="p">,</span>
+  <span class="na">tags</span><span class="o">:</span> <span class="s">'Tags'</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
 </div>
 
-<p>For reference, here is the list of all the translations for the <code class="highlighter-rouge">en-us</code> locale:</p>
+<p>If you want to support multiple languages though, you’ll need to pass for each key an object using <em>locales</em> as key. The locale is <code class="highlighter-rouge">en-us</code> in <code class="highlighter-rouge">yoursupport.zendesk.com/hc/en-us</code>. For example, for English and French, you might want to pass:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -353,53 +337,63 @@ The library already supports these locales:</p>
 46
 47
 48
-49</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
+49
+50
+51
+52
+53
+54</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
+  <span class="na">article</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Article'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Article'</span>
+  <span class="p">},</span>
+  <span class="na">articles</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Articles'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Articles'</span>
+  <span class="p">},</span>
   <span class="na">categories</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Categories'</span>
-  <span class="p">},</span>
-  <span class="na">change_query</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Change your query'</span>
-  <span class="p">},</span>
-  <span class="na">clear_filters</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'clear your filters'</span>
-  <span class="p">},</span>
-  <span class="na">format_number</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="nx">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">n</span><span class="p">.</span><span class="na">toString</span><span class="p">().</span><span class="na">replace</span><span class="p">(</span><span class="sr">/\B(?=(\d{3})+(?!\d))/g</span><span class="p">,</span> <span class="s">','</span><span class="p">);</span> <span class="p">}</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Categories'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Catégories'</span>
   <span class="p">},</span>
   <span class="na">filter</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Filter results'</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Filter results'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Filtrer les résultats'</span>
   <span class="p">},</span>
-  <span class="na">nb_results</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="nx">function</span> <span class="p">(</span><span class="nx">nb</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">format_number</span><span class="p">(</span><span class="nx">nb</span><span class="p">)</span> <span class="o">+</span> <span class="s">' result'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">nb</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="s">'s'</span> <span class="o">:</span> <span class="s">''</span><span class="p">);</span>
-    <span class="p">}</span>
+  <span class="na">found_in</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Found in'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Trouvés en'</span>
   <span class="p">},</span>
   <span class="na">no_result</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="nx">function</span> <span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">'No result found for '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">quoted</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'No result'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Aucun résultat'</span>
   <span class="p">},</span>
-  <span class="na">no_result_actions</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="nx">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">change_query</span> <span class="o">+</span> <span class="s">' or '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">clear_filters</span><span class="p">;</span>
-    <span class="p">}</span>
+  <span class="na">placeholder_autocomplete</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search in articles and sections'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Rechercher dans les articles et sections'</span>
   <span class="p">},</span>
-  <span class="na">placeholder</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search in our articles'</span>
+  <span class="na">placeholder_instantsearch</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search in articles'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Rechercher dans les articles'</span>
   <span class="p">},</span>
-  <span class="na">quoted</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="nx">function</span> <span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="s">'"'</span> <span class="o">+</span> <span class="nx">escapeHTML</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">+</span> <span class="s">'"'</span><span class="p">;</span> <span class="p">}</span>
+  <span class="na">result</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Result'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Résultat'</span>
   <span class="p">},</span>
-  <span class="na">stats</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="nx">function</span> <span class="p">(</span><span class="nx">nbHits</span><span class="p">,</span> <span class="nx">processing</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">nb_results</span><span class="p">(</span><span class="nx">nbHits</span><span class="p">)</span> <span class="o">+</span> <span class="s">' found in '</span> <span class="o">+</span> <span class="nx">processing</span> <span class="o">+</span> <span class="s">' ms'</span><span class="p">;</span>
-    <span class="p">}</span>
+  <span class="na">results</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Results'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Résultats'</span>
   <span class="p">},</span>
   <span class="na">search_by</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="nx">function</span> <span class="p">(</span><span class="nx">algolia</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="s">'Search by '</span> <span class="o">+</span> <span class="nx">algolia</span><span class="p">;</span> <span class="p">}</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search by'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Recherche par'</span>
+  <span class="p">},</span>
+  <span class="na">sections</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Sections'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Sections'</span>
   <span class="p">},</span>
   <span class="na">tags</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Tags'</span>
+    <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Tags'</span><span class="p">,</span>
+    <span class="s">'fr'</span><span class="o">:</span> <span class="s">'Tags'</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
@@ -435,7 +429,7 @@ The library already supports these locales:</p>
     <a class='ac-footer-btn ac-footer-btn-cta' href='https://community.algolia.com/'>See More</a>
     <span class='ac-icon ac-icon-love-dark'></span>
   </div>
-  <p class='ac-footer-version'>Latest version: 2.4.0</p>
+  <p class='ac-footer-version'>Latest version: 2.4.1</p>
   <div class='ac-footer-actions'>
     <div class='container'>
       <p>Build unique search experiences with Algolia</p>
