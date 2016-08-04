@@ -408,7 +408,14 @@ The library already supports these locales:</p>
 
 <h2 id="zendesk-community-search">Zendesk Community search</h2>
 
-<p>We do not index community forums for now. If you’re using them, you’ll probably want to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just provide the auto-complete feature on your home page.</p>
+<p>We do not index community forums for now. If you’re using them, you’ll probably want to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
+
+<h2 id="indexing-private-articles">Indexing private articles</h2>
+
+<p>Since we’re providing a front-end search, and we can’t securely know which access a user has in Zendesk’s templates, we have to limit our indexing to public articles only.  <br />
+A public article is not a draft and its access policy is <code class="highlighter-rouge">everybody</code>.  <br />
+If you’re in such a scenario, we recommend you to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
+
 
   </article>
 </div>
