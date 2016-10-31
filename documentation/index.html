@@ -427,6 +427,32 @@ The library already supports these locales:</p>
 </div>
 </div>
 
+<h2 id="localized-tags">Localized tags</h2>
+
+<p>You can index localized tags based on locales prefix (e.g. <code class="highlighter-rouge">en-us</code> or <code class="highlighter-rouge">en</code>).<br />
+If we detect a locale, we’ll only index localized tags for this translation.  <br />
+For instance, an article with those tags:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="p">[</span>
+  <span class="s">'Wow'</span><span class="p">,</span>
+  <span class="s">'en:Awesome'</span><span class="p">,</span>
+  <span class="s">'en-gb:Good'</span><span class="p">,</span>
+  <span class="s">'fr:Incroyable'</span>
+<span class="p">]</span>
+</pre></td></tr></tbody></table>
+</div>
+</div>
+
+<p>For <code class="highlighter-rouge">fr</code> and <code class="highlighter-rouge">fr-*</code> locales, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Incroyable"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.  <br />
+For <code class="highlighter-rouge">en-au</code>, <code class="highlighter-rouge">en-ca</code> and <code class="highlighter-rouge">en-us</code> locales, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Awesome"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.  <br />
+For the <code class="highlighter-rouge">en-gb</code> locale, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Good"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.  <br />
+For all the other locales, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Wow"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.</p>
+
 <h2 id="zendesk-community-search">Zendesk Community search</h2>
 
 <p>We do not index community forums for now. If you’re using them, you’ll probably want to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
@@ -464,7 +490,7 @@ If you’re in such a scenario, we recommend you to disable <code class="highlig
     <a class='ac-footer-btn ac-footer-btn-cta' href='https://community.algolia.com/'>See More</a>
     <span class='ac-icon ac-icon-love-dark'></span>
   </div>
-  <p class='ac-footer-version'>Latest version: 2.7.0</p>
+  <p class='ac-footer-version'>Latest version: 2.8.0</p>
   <div class='ac-footer-actions'>
     <div class='container'>
       <p>Build unique search experiences with Algolia</p>
