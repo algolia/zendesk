@@ -117,7 +117,7 @@ On this page, just click the “Reindex” button in the top right corner. A few
 
 <p>Here is a full breakdown of the available options for the JavaScript library:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -155,7 +155,8 @@ On this page, just click the “Reindex” button in the top right corner. A few
 36
 37
 38
-39</pre></td><td class="code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
+39
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
   <span class="nx">algoliasearchZendeskHC</span><span class="p">({</span>
@@ -166,7 +167,7 @@ On this page, just click the “Reindex” button in the top right corner. A few
     <span class="c1">//</span>
     <span class="c1">// Optional configuration:</span>
     <span class="c1">//</span>
-    <span class="na">indexPrefix</span><span class="p">:</span> <span class="s1">'zendesk_'</span><span class="p">,</span>              <span class="c1">// or your custom &lt;INDEX_PREFIX&gt;</span>
+    <span class="na">indexPrefix</span><span class="p">:</span> <span class="s1">'zendesk_'</span><span class="p">,</span>              <span class="c1">// or your custom </span><span class="o">&lt;</span><span class="nx">INDEX_PREFIX</span><span class="o">&gt;</span>
     <span class="na">baseUrl</span><span class="p">:</span> <span class="s1">'/hc/'</span><span class="p">,</span>                      <span class="c1">// the base URL of your Help Center</span>
     <span class="na">poweredBy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                      <span class="c1">// show the "Search by Algolia" link (required if you're on Algolia's FREE plan)</span>
     <span class="na">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                         <span class="c1">// debug mode prevents the autocomplete to close when trying to inspect it</span>
@@ -194,9 +195,7 @@ On this page, just click the “Reindex” button in the top right corner. A few
     <span class="na">translations</span><span class="p">:</span> <span class="p">{}</span>                      <span class="c1">// translation strings</span>
   <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="customizing-the-css">Customizing the CSS</h2>
 
@@ -214,7 +213,7 @@ No worries, these are usually just a few conflicting rules between your design a
 
 <p><strong>Example:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -223,7 +222,8 @@ No worries, these are usually just a few conflicting rules between your design a
 7
 8
 9
-10</pre></td><td class="code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/CURRENT_VERSION/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
+10
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/CURRENT_VERSION/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;style&gt;</span>
   <span class="nc">.aa-dropdown-menu</span> <span class="p">{</span>
     <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ccc</span><span class="p">;</span>
@@ -233,9 +233,7 @@ No worries, these are usually just a few conflicting rules between your design a
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
   <span class="nx">algoliasearchZendeskHC</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><strong>Note:</strong> You might have some trouble trying to customize the autocomplete menu because it automatically closes when you try to Inspect it.<br />
 Just set <code class="highlighter-rouge">debug: true</code> to avoid this behaviour.</p>
@@ -317,26 +315,25 @@ The library already supports these locales:</p>
 
 <p>If some translations don’t fit what you want, you can change them using this syntax:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-coffee highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-7</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
+7
+</pre></td><td class="rouge-code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
   <span class="na">placeholder</span><span class="o">:</span> <span class="p">{</span>
     <span class="na">de</span><span class="o">:</span> <span class="s">'In unseren Help Center suchen'</span><span class="p">,</span>
     <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Search in our Help Center'</span><span class="p">,</span>
     <span class="na">fr</span><span class="o">:</span> <span class="s">'Recherchez dans notre Help Center'</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>For reference, here is the list of all the translations for the <code class="highlighter-rouge">en-us</code> locale:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-coffee highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -384,7 +381,8 @@ The library already supports these locales:</p>
 46
 47
 48
-49</pre></td><td class="code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
+49
+</pre></td><td class="rouge-code"><pre><span class="na">translations</span><span class="o">:</span> <span class="p">{</span>
   <span class="na">categories</span><span class="o">:</span> <span class="p">{</span>
     <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Categories'</span>
   <span class="p">},</span>
@@ -433,9 +431,7 @@ The library already supports these locales:</p>
     <span class="s">'en-us'</span><span class="o">:</span> <span class="s">'Tags'</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="localized-tags">Localized tags</h2>
 
@@ -443,25 +439,24 @@ The library already supports these locales:</p>
 If we detect a locale, we’ll only index localized tags for this translation.  <br />
 For instance, an article with those tags:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<div class="language-coffee highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="p">[</span>
+6
+</pre></td><td class="rouge-code"><pre><span class="p">[</span>
   <span class="s">'Wow'</span><span class="p">,</span>
   <span class="s">'en:Awesome'</span><span class="p">,</span>
   <span class="s">'en-gb:Good'</span><span class="p">,</span>
   <span class="s">'fr:Incroyable'</span>
 <span class="p">]</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>For <code class="highlighter-rouge">fr</code> and <code class="highlighter-rouge">fr-*</code> locales, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Incroyable"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.  <br />
-For <code class="highlighter-rouge">en-au</code>, <code class="highlighter-rouge">en-ca</code> and <code class="highlighter-rouge">en-us</code> locales, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Awesome"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.  <br />
-For the <code class="highlighter-rouge">en-gb</code> locale, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Good"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.  <br />
-For all the other locales, we’ll index <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="s2">"label_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Wow"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span></code>.</p>
+<p>For <code class="highlighter-rouge">fr</code> and <code class="highlighter-rouge">fr-*</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Incroyable"] }</code>.  <br />
+For <code class="highlighter-rouge">en-au</code>, <code class="highlighter-rouge">en-ca</code> and <code class="highlighter-rouge">en-us</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Awesome"] }</code>.  <br />
+For the <code class="highlighter-rouge">en-gb</code> locale, we’ll index <code class="highlighter-rouge">{ "label_names": ["Good"] }</code>.  <br />
+For all the other locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Wow"] }</code>.</p>
 
 <h2 id="zendesk-community-search">Zendesk Community search</h2>
 
@@ -478,12 +473,11 @@ If you’re in such a scenario, we recommend you to disable <code class="highlig
 <p><strong>WARNING</strong>: We don’t provide any guarantee that we won’t change the templates between versions.<br />
 If you chose to modify a template, you’ll need to lock your version to MAJOR.MINOR.PATCH instead of just MAJOR in</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></td></tr></tbody></table>
-</div>
-</div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>The latest version is <a href="https://www.npmjs.com/package/algoliasearch.zendesk-hc"><img src="https://img.shields.io/npm/v/algoliasearch.zendesk-hc.png" alt="version" /></a>.</p>
 
@@ -517,7 +511,7 @@ Also, some templates are using a <code class="highlighter-rouge">compile</code> 
     <a class='ac-footer-btn ac-footer-btn-cta' href='https://community.algolia.com/'>See More</a>
     <span class='ac-icon ac-icon-love-dark'></span>
   </div>
-  <p class='ac-footer-version'>Latest version: 2.17.4</p>
+  <p class='ac-footer-version'>Latest version: 2.18.0</p>
   <div class='ac-footer-actions'>
     <div class='container'>
       <p>Build unique search experiences with Algolia</p>
