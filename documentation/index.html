@@ -465,7 +465,7 @@ For all the other locales, we’ll index <code class="highlighter-rouge">{ "labe
 <h2 id="indexing-private-articles">Indexing private articles</h2>
 
 <p>Since we’re providing a front-end search, and we can’t securely know which access a user has in Zendesk’s templates, we have to limit our indexing to public articles only.  <br />
-A public article is not a draft and its access policy is <code class="highlighter-rouge">everybody</code>.  <br />
+A public article is not a draft and its section belongs to no user segment (i.e. <code class="highlighter-rouge">everybody</code>).  <br />
 If you’re in such a scenario, we recommend you to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
 
 <h2 id="modifying-templates">Modifying templates</h2>
@@ -511,7 +511,7 @@ Also, some templates are using a <code class="highlighter-rouge">compile</code> 
     <a class='ac-footer-btn ac-footer-btn-cta' href='https://community.algolia.com/'>See More</a>
     <span class='ac-icon ac-icon-love-dark'></span>
   </div>
-  <p class='ac-footer-version'>Latest version: 2.19.1</p>
+  <p class='ac-footer-version'>Latest version: 2.20.0</p>
   <div class='ac-footer-actions'>
     <div class='container'>
       <p>Build unique search experiences with Algolia</p>
