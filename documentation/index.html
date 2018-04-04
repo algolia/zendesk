@@ -69,7 +69,7 @@
 
 <ol>
   <li>Create an <a href="https://www.algolia.com/users/sign_up">Algolia account</a>.</li>
-  <li>Follow the <a href="https://www.algolia.com/zendesk" rel="nofollow">Get Started</a> guide to connect your Zendesk Help Center with your Agolia account.</li>
+  <li>Follow the <a href="https://www.algolia.com/zendesk" rel="nofollow">Get Started</a> guide to connect your Zendesk Help Center with your Algolia account.</li>
 </ol>
 
 <h2 id="indexing">Indexing</h2>
@@ -204,7 +204,7 @@ On this page, just click the “Reindex” button in the top right corner. A few
 
 <h2 id="customizing-the-css">Customizing the CSS</h2>
 
-<p>It is definitely possible that, when you install the application, it doesn’t exactly display as you expect.  <br />
+<p>It is definitely possible that, when you install the application, it doesn’t exactly display as you expect.<br />
 No worries, these are usually just a few conflicting rules between your design and our integration.</p>
 
 <p>You might also just want to change the look &amp; feel of the search.</p>
@@ -441,7 +441,7 @@ The library already supports these locales:</p>
 <h2 id="localized-tags">Localized tags</h2>
 
 <p>You can index localized tags based on locales prefix (e.g. <code class="highlighter-rouge">en-us</code> or <code class="highlighter-rouge">en</code>).<br />
-If we detect a locale, we’ll only index localized tags for this translation.  <br />
+If we detect a locale, we’ll only index localized tags for this translation.<br />
 For instance, an article with those tags:</p>
 
 <div class="language-coffee highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -458,9 +458,9 @@ For instance, an article with those tags:</p>
 <span class="p">]</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>For <code class="highlighter-rouge">fr</code> and <code class="highlighter-rouge">fr-*</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Incroyable"] }</code>.  <br />
-For <code class="highlighter-rouge">en-au</code>, <code class="highlighter-rouge">en-ca</code> and <code class="highlighter-rouge">en-us</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Awesome"] }</code>.  <br />
-For the <code class="highlighter-rouge">en-gb</code> locale, we’ll index <code class="highlighter-rouge">{ "label_names": ["Good"] }</code>.  <br />
+<p>For <code class="highlighter-rouge">fr</code> and <code class="highlighter-rouge">fr-*</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Incroyable"] }</code>.<br />
+For <code class="highlighter-rouge">en-au</code>, <code class="highlighter-rouge">en-ca</code> and <code class="highlighter-rouge">en-us</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Awesome"] }</code>.<br />
+For the <code class="highlighter-rouge">en-gb</code> locale, we’ll index <code class="highlighter-rouge">{ "label_names": ["Good"] }</code>.<br />
 For all the other locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Wow"] }</code>.</p>
 
 <h2 id="zendesk-community-search">Zendesk Community search</h2>
@@ -469,8 +469,8 @@ For all the other locales, we’ll index <code class="highlighter-rouge">{ "labe
 
 <h2 id="indexing-private-articles">Indexing private articles</h2>
 
-<p>Since we’re providing a front-end search, and we can’t securely know which access a user has in Zendesk’s templates, we have to limit our indexing to public articles only.  <br />
-A public article is not a draft and its section belongs to no user segment (i.e. <code class="highlighter-rouge">everybody</code>).  <br />
+<p>Since we’re providing a front-end search, and we can’t securely know which access a user has in Zendesk’s templates, we have to limit our indexing to public articles only.<br />
+A public article is not a draft and its section belongs to no user segment (i.e. <code class="highlighter-rouge">everybody</code>).<br />
 If you’re in such a scenario, we recommend you to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
 
 <h2 id="modifying-templates">Modifying templates</h2>
