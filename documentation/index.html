@@ -473,6 +473,11 @@ For all the other locales, we’ll index <code class="highlighter-rouge">{ "labe
 A public article is not a draft and its section belongs to no user segment (i.e. <code class="highlighter-rouge">everybody</code>).<br />
 If you’re in such a scenario, we recommend you to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
 
+<h2 id="removing-specific-articles-from-the-search-results">Removing specific articles from the search results</h2>
+
+<p>You can let our script know that you’d want for an article not to be indexed. For this, all you need to do is to add an <code class="highlighter-rouge">algolia-ignore</code> tag on your article.<br />
+After the next reindex, the article should not be searchable anymore.</p>
+
 <h2 id="modifying-templates">Modifying templates</h2>
 
 <p><strong>WARNING</strong>: We don’t provide any guarantee that we won’t change the templates between versions.<br />
@@ -516,7 +521,7 @@ Also, some templates are using a <code class="highlighter-rouge">compile</code> 
     <a class='ac-footer-btn ac-footer-btn-cta' href='https://community.algolia.com/'>See More</a>
     <span class='ac-icon ac-icon-love-dark'></span>
   </div>
-  <p class='ac-footer-version'>Latest version: 2.21.2</p>
+  <p class='ac-footer-version'>Latest version: 2.22.0</p>
   <div class='ac-footer-actions'>
     <div class='container'>
       <p>Build unique search experiences with Algolia</p>
