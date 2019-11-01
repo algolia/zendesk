@@ -179,7 +179,7 @@ On this page, just click the “Reindex” button in the bottom right corner. A 
     <span class="na">analytics</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                      <span class="c1">// should queries be processed by Algolia analytics</span>
     <span class="na">baseUrl</span><span class="p">:</span> <span class="s1">'/hc/'</span><span class="p">,</span>                      <span class="c1">// the base URL of your Help Center</span>
     <span class="na">poweredBy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                      <span class="c1">// show the "Search by Algolia" link (required if you're on Algolia's FREE plan)</span>
-    <span class="na">clickAnalytics</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                <span class="c1">// wether or not to enable the clikAnalytics feature (available on the Enterprise plan)</span>
+    <span class="na">clickAnalytics</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                <span class="c1">// whether or not to enable the clickAnalytics feature (available on the Enterprise plan)</span>
     <span class="na">debug</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                         <span class="c1">// debug mode prevents the autocomplete to close when trying to inspect it</span>
     <span class="na">color</span><span class="p">:</span> <span class="s1">'#158EC2'</span><span class="p">,</span>                     <span class="c1">// main color (used for links)</span>
     <span class="na">highlightColor</span><span class="p">:</span> <span class="s1">'#158EC2'</span><span class="p">,</span>            <span class="c1">// highlight color to emphasize matching text</span>
@@ -486,6 +486,39 @@ If you’re in such a scenario, we recommend you to disable <code class="highlig
 <p>You can let our script know that you’d want for an article not to be indexed. For this, all you need to do is to add an <code class="highlighter-rouge">algolia-ignore</code> tag on your article.<br />
 After the next reindex, the article should not be searchable anymore.</p>
 
+<h2 id="excluding-portions-of-article-from-indexing">Excluding portions of article from indexing</h2>
+
+<p>To prevent certain specific portion of your article to be indexed to Algolia, you can wrap the html source code of these portion between <code class="highlighter-rouge">&lt;!-- algolia-ignore --&gt; &lt;!-- /algolia-ignore --&gt;</code> tags. This way, these portions of text won’t be searchable.</p>
+
+<p>Example:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;h1&gt;</span>This is a test article<span class="nt">&lt;/h1&gt;</span>
+<span class="c">&lt;!-- algolia-ignore --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  This paragraph won't be indexed to Algolia.
+<span class="nt">&lt;/p&gt;</span>
+<span class="c">&lt;!-- /algolia-ignore --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  This paragraph will be indexed to Algolia.
+<span class="nt">&lt;/p&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="analytics">Analytics</h2>
+
+<p>The <code class="highlighter-rouge">analytics</code> parameter enables searches capturing, for reports about popular queries, searches without results, and more. It defaults to <code class="highlighter-rouge">true</code>.</p>
+
+<p>The <code class="highlighter-rouge">clickAnalytics</code> parameter enables click capturing in search results, for reports about the click rate and average position of clicks for specific queries. It defaults to <code class="highlighter-rouge">false</code>, as this feature is only accessible on our Enterprise plan.</p>
+
+<p>With <code class="highlighter-rouge">clickAnalytics</code> enabled, you can use <code class="highlighter-rouge">algoliasearchZendeskHC.trackConversion()</code> on an article page to capture a “conversion” if your articles include Calls To Action.</p>
+
 <h2 id="modifying-templates">Modifying templates</h2>
 
 <p><strong>WARNING</strong>: We don’t provide any guarantee that we won’t change the templates between versions.<br />
@@ -529,7 +562,7 @@ Also, some templates are using a <code class="highlighter-rouge">compile</code> 
     <a class='ac-footer-btn ac-footer-btn-cta' href='https://community.algolia.com/'>See More</a>
     <span class='ac-icon ac-icon-love-dark'></span>
   </div>
-  <p class='ac-footer-version'>Latest version: 2.27.0</p>
+  <p class='ac-footer-version'>Latest version: 2.28.0</p>
   <div class='ac-footer-actions'>
     <div class='container'>
       <p>Build unique search experiences with Algolia</p>
