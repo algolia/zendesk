@@ -536,6 +536,16 @@ If you chose to modify a template, you’ll need to lock your version to MAJOR.M
 The code here is ES6, you’ll need to rewrite your custom template using Vanilla JavaScript instead.<br />
 Also, some templates are using a <code class="highlighter-rouge">compile</code> function in this file. This function is internally calling the <a href="http://mustache.github.io/mustache.5.html"><code class="highlighter-rouge">Hogan.js</code> template engine</a> with square brackets instead of braces (because Zendesk templates already use braces). This function is available using <code class="highlighter-rouge">algoliasearchZendeskHC.compile</code>.</p>
 
+<h2 id="whitelisting-our-ips">Whitelisting our IPs</h2>
+
+<p>In case you’re using Zendesk’s <a href="https://support.zendesk.com/hc/en-us/articles/203663706-Restricting-access-to-Zendesk-Support-and-your-Help-Center-using-IP-restrictions">IP restrictions feature</a>, you’ll need to whitelist our IPs for our indexing to work.<br />
+Here are those IPs:</p>
+<ul>
+  <li><code class="highlighter-rouge">3.221.200.5</code></li>
+  <li><code class="highlighter-rouge">52.204.20.39</code></li>
+  <li><code class="highlighter-rouge">52.22.248.248</code></li>
+</ul>
+
   </article>
 </div>
 
