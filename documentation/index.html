@@ -64,7 +64,7 @@
 <h2 id="synchronize-algolia-with-your-help-center">Synchronize Algolia with your Help Center</h2>
 
 <div align="center">
-  <img src="https://community.algolia.com/zendesk/img/algolia-zendesk.svg" alt="Data connection visualization" />
+  <img src="https://www.algolia.com/_next/image/?url=https%3A%2F%2Fres.cloudinary.com%2Fhilnmyskv%2Fimage%2Fupload%2Fv1671027406%2FAlgolia_com_Website_assets%2Fimages%2Fzendesk%2FZendesk-algolia.png&amp;w=1200&amp;q=75" alt="Data connection visualization" />
 </div>
 
 <ol>
@@ -74,14 +74,14 @@
 
 <h2 id="indexing">Indexing</h2>
 
-<p>When you install our Zendesk integration, it creates what we call a connector in your Algolia account.<br />
+<p>When you install our Zendesk integration, it creates what we call a connector in your Algolia account.
 You can access it with the left sidebar in your dashboard.</p>
 
-<p>This connector will every day take your public Help Center articles and put them inside an Algolia index.<br />
+<p>This connector will every day take your public Help Center articles and put them inside an Algolia index.
 In most cases, this should be enough to have an up-to-date search.</p>
 
-<p>However, if you’d rather have it updated sooner, you can manually trigger a full reindex.<br />
-On this page, click the “Reindex” button in the bottom right corner. An indexing job will be pushed in our indexing queue. Depending on the load of the queue, it might take up to a few hours for your search index to be updated.</p>
+<p>However, if you’d rather have it updated sooner, you can manually trigger a full reindex.
+On your <a href="https://dashboard.algolia.com/connectors/tasks">Connectors</a> page, click the “Run task” button on the right of your task.</p>
 
 <h2 id="updating-your-help-center-theme">Updating your Help Center theme</h2>
 
@@ -165,6 +165,8 @@ On this page, click the “Reindex” button in the bottom right corner. An inde
 41
 42
 43
+44
+45
 </pre></td><td class="rouge-code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.css"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//cdn.jsdelivr.net/algoliasearch.zendesk-hc/2/algoliasearch.zendesk-hc.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
@@ -172,11 +174,11 @@ On this page, click the “Reindex” button in the bottom right corner. An inde
     <span class="na">applicationId</span><span class="p">:</span> <span class="s1">'&lt;YOUR APPLICATION_ID&gt;'</span><span class="p">,</span>
     <span class="na">apiKey</span><span class="p">:</span> <span class="s1">'&lt;YOUR SEARCH ONLY API KEY&gt;'</span><span class="p">,</span>
     <span class="na">subdomain</span><span class="p">:</span> <span class="s1">'&lt;YOUR ZENDESK APPLICATION NAME&gt;'</span><span class="p">,</span>
+    <span class="na">indexName</span><span class="p">:</span> <span class="s1">'&lt;YOUR ALGOLIA INDEX NAME&gt;'</span><span class="p">,</span>
 
     <span class="c1">//</span>
     <span class="c1">// Optional configuration:</span>
     <span class="c1">//</span>
-    <span class="na">indexPrefix</span><span class="p">:</span> <span class="s1">'zendesk_'</span><span class="p">,</span>              <span class="c1">// or your custom </span><span class="o">&lt;</span><span class="nx">INDEX_PREFIX</span><span class="o">&gt;</span>
     <span class="na">analytics</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                      <span class="c1">// should queries be processed by Algolia analytics</span>
     <span class="na">baseUrl</span><span class="p">:</span> <span class="s1">'/hc/'</span><span class="p">,</span>                      <span class="c1">// the base URL of your Help Center</span>
     <span class="na">poweredBy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                      <span class="c1">// show the "Search by Algolia" link (required if you're on Algolia's FREE plan)</span>
@@ -198,9 +200,11 @@ On this page, click the “Reindex” button in the bottom right corner. An inde
       <span class="na">hideAutocomplete</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>             <span class="c1">// whether or not to hide the autocomplete on the instantsearch page (ignored if reuseAutocomplete is used)</span>
       <span class="na">selector</span><span class="p">:</span> <span class="s1">'.search-results'</span><span class="p">,</span>        <span class="c1">// the DOM selector for the results container</span>
       <span class="na">tagsLimit</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>                      <span class="c1">// maximum number of tags to display</span>
-      <span class="na">useEditedAt</span><span class="p">:</span> <span class="kc">false</span>                  <span class="c1">// show edited_at timestamp in search results</span>
+      <span class="na">useEditedAt</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                 <span class="c1">// show edited_at timestamp in search results</span>
+      <span class="na">showHitsFullPath</span><span class="p">:</span> <span class="kc">false</span>             <span class="c1">// show section fullpath in search results</span>
     <span class="p">},</span>
     <span class="nx">instantsearchPage</span><span class="p">,</span>                    <span class="c1">// function to check if we're on the search page</span>
+    <span class="na">indexPrefix</span><span class="p">:</span> <span class="s1">'zendesk_'</span><span class="p">,</span>              <span class="c1">// @deprecated use `indexName` instead</span>
     <span class="na">templates</span><span class="p">:</span> <span class="p">{</span>                          <span class="c1">// template objects (see the templates section)</span>
       <span class="na">autocomplete</span><span class="p">:</span> <span class="p">{},</span>
       <span class="na">instantsearch</span><span class="p">:</span> <span class="p">{}</span>
@@ -212,7 +216,7 @@ On this page, click the “Reindex” button in the bottom right corner. An inde
 
 <h2 id="customizing-the-css">Customizing the CSS</h2>
 
-<p>It is definitely possible that, when you install the application, it doesn’t exactly display as you expect.<br />
+<p>It is definitely possible that, when you install the application, it doesn’t exactly display as you expect.
 No worries, these are usually just a few conflicting rules between your design and our integration.</p>
 
 <p>You might also just want to change the look &amp; feel of the search.</p>
@@ -221,7 +225,7 @@ No worries, these are usually just a few conflicting rules between your design a
 
 <ul>
   <li>Ensure you read the <a href="https://github.com/algolia/algoliasearch-zendesk/blob/master/app/css/index.scss">SCSS source file</a> to see all the rules we’re using</li>
-  <li>Add a <code class="highlighter-rouge">&lt;style&gt;</code> tag after the <code class="highlighter-rouge">&lt;link&gt;</code> tag you’ve already added in your <strong>Document Head</strong> template and add your custom CSS here</li>
+  <li>Add a <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag after the <code class="language-plaintext highlighter-rouge">&lt;link&gt;</code> tag you’ve already added in your <strong>Document Head</strong> template and add your custom CSS here</li>
 </ul>
 
 <p><strong>Example:</strong></p>
@@ -248,8 +252,8 @@ No worries, these are usually just a few conflicting rules between your design a
 <span class="nt">&lt;/script&gt;</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><strong>Note:</strong> You might have some trouble trying to customize the autocomplete menu because it automatically closes when you try to Inspect it.<br />
-Just set <code class="highlighter-rouge">debug: true</code> to avoid this behaviour.</p>
+<p><strong>Note:</strong> You might have some trouble trying to customize the autocomplete menu because it automatically closes when you try to Inspect it.
+Just set <code class="language-plaintext highlighter-rouge">debug: true</code> to avoid this behaviour.</p>
 
 <h2 id="supporting-multiple-languages">Supporting multiple languages</h2>
 
@@ -262,7 +266,7 @@ Just set <code class="highlighter-rouge">debug: true</code> to avoid this behavi
     <p>The results sent to the user are always limited to the ones in the currently selected locale.</p>
   </li>
   <li>
-    <p>Some constant strings like the ones used in the sentence “12 results found in 1ms” need to be translated.<br />
+    <p>Some constant strings like the ones used in the sentence “12 results found in 1ms” need to be translated.
 The library already supports these locales:</p>
 
     <ul>
@@ -346,7 +350,7 @@ The library already supports these locales:</p>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>For reference, here is the list of all the translations for the <code class="highlighter-rouge">en-us</code> locale:</p>
+<p>For reference, here is the list of all the translations for the <code class="language-plaintext highlighter-rouge">en-us</code> locale:</p>
 
 <div class="language-coffee highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -450,8 +454,8 @@ The library already supports these locales:</p>
 
 <h2 id="localized-tags">Localized tags</h2>
 
-<p>You can index localized tags based on locales prefix (e.g. <code class="highlighter-rouge">en-us</code> or <code class="highlighter-rouge">en</code>).<br />
-If we detect a locale, we’ll only index localized tags for this translation.<br />
+<p>You can index localized tags based on locales prefix (e.g. <code class="language-plaintext highlighter-rouge">en-us</code> or <code class="language-plaintext highlighter-rouge">en</code>).
+If we detect a locale, we’ll only index localized tags for this translation.
 For instance, an article with those tags:</p>
 
 <div class="language-coffee highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -468,29 +472,29 @@ For instance, an article with those tags:</p>
 <span class="p">]</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>For <code class="highlighter-rouge">fr</code> and <code class="highlighter-rouge">fr-*</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Incroyable"] }</code>.<br />
-For <code class="highlighter-rouge">en-au</code>, <code class="highlighter-rouge">en-ca</code> and <code class="highlighter-rouge">en-us</code> locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Awesome"] }</code>.<br />
-For the <code class="highlighter-rouge">en-gb</code> locale, we’ll index <code class="highlighter-rouge">{ "label_names": ["Good"] }</code>.<br />
-For all the other locales, we’ll index <code class="highlighter-rouge">{ "label_names": ["Wow"] }</code>.</p>
+<p>For <code class="language-plaintext highlighter-rouge">fr</code> and <code class="language-plaintext highlighter-rouge">fr-*</code> locales, we’ll index <code class="language-plaintext highlighter-rouge">{ "label_names": ["Incroyable"] }</code>.
+For <code class="language-plaintext highlighter-rouge">en-au</code>, <code class="language-plaintext highlighter-rouge">en-ca</code> and <code class="language-plaintext highlighter-rouge">en-us</code> locales, we’ll index <code class="language-plaintext highlighter-rouge">{ "label_names": ["Awesome"] }</code>.
+For the <code class="language-plaintext highlighter-rouge">en-gb</code> locale, we’ll index <code class="language-plaintext highlighter-rouge">{ "label_names": ["Good"] }</code>.
+For all the other locales, we’ll index <code class="language-plaintext highlighter-rouge">{ "label_names": ["Wow"] }</code>.</p>
 
 <h2 id="zendesk-community-search">Zendesk Community search</h2>
 
-<p>We do not index community forums for now. If you’re using them, you’ll probably want to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
+<p>We do not index community forums for now. If you’re using them, you’ll probably want to disable <code class="language-plaintext highlighter-rouge">instantsearch</code> by setting <code class="language-plaintext highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
 
 <h2 id="indexing-private-articles">Indexing private articles</h2>
 
-<p>Since we’re providing a front-end search, and we can’t securely know which access a user has in Zendesk’s templates, we have to limit our indexing to public articles only.<br />
-A public article is not a draft and is visible to Everybody.<br />
-If you’re in such a scenario, we recommend you to disable <code class="highlighter-rouge">instantsearch</code> by setting <code class="highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
+<p>Since we’re providing a front-end search, and we can’t securely know which access a user has in Zendesk’s templates, we have to limit our indexing to public articles only.
+A public article is not a draft and is visible to Everybody.
+If you’re in such a scenario, we recommend you to disable <code class="language-plaintext highlighter-rouge">instantsearch</code> by setting <code class="language-plaintext highlighter-rouge">enabled: false</code> and just use the auto-complete feature.</p>
 
 <h2 id="removing-specific-articles-from-the-search-results">Removing specific articles from the search results</h2>
 
-<p>You can let our script know that you’d want for an article not to be indexed. For this, all you need to do is to add an <code class="highlighter-rouge">algolia-ignore</code> tag on your article.<br />
+<p>You can let our script know that you’d want for an article not to be indexed. For this, all you need to do is to add an <code class="language-plaintext highlighter-rouge">algolia-ignore</code> tag on your article.
 After the next reindex, the article should not be searchable anymore.</p>
 
 <h2 id="excluding-portions-of-article-from-indexing">Excluding portions of article from indexing</h2>
 
-<p>To prevent certain specific portion of your article to be indexed to Algolia, you can wrap the html source code of these portion between <code class="highlighter-rouge">&lt;!-- algolia-ignore --&gt; &lt;!-- /algolia-ignore --&gt;</code> tags. This way, these portions of text won’t be searchable.</p>
+<p>To prevent certain specific portion of your article to be indexed to Algolia, you can wrap the html source code of these portion between <code class="language-plaintext highlighter-rouge">&lt;!-- algolia-ignore --&gt; &lt;!-- /algolia-ignore --&gt;</code> tags. This way, these portions of text won’t be searchable.</p>
 
 <p>Example:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -515,15 +519,15 @@ After the next reindex, the article should not be searchable anymore.</p>
 
 <h2 id="analytics">Analytics</h2>
 
-<p>The <code class="highlighter-rouge">analytics</code> parameter enables searches capturing, for reports about popular queries, searches without results, and more. It defaults to <code class="highlighter-rouge">true</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">analytics</code> parameter enables searches capturing, for reports about popular queries, searches without results, and more. It defaults to <code class="language-plaintext highlighter-rouge">true</code>.</p>
 
-<p>The <code class="highlighter-rouge">clickAnalytics</code> parameter enables click capturing in search results, for reports about the click rate and average position of clicks for specific queries. It defaults to <code class="highlighter-rouge">false</code>, as this feature is only accessible on our Enterprise plan.</p>
+<p>The <code class="language-plaintext highlighter-rouge">clickAnalytics</code> parameter enables click capturing in search results, for reports about the click rate and average position of clicks for specific queries. It defaults to <code class="language-plaintext highlighter-rouge">false</code>, as this feature is only accessible on our Enterprise plan.</p>
 
-<p>With <code class="highlighter-rouge">clickAnalytics</code> enabled, you can use <code class="highlighter-rouge">algoliasearchZendeskHC.trackConversion()</code> on an article page to capture a “conversion” if your articles include Calls To Action.</p>
+<p>With <code class="language-plaintext highlighter-rouge">clickAnalytics</code> enabled, you can use <code class="language-plaintext highlighter-rouge">algoliasearchZendeskHC.trackConversion()</code> on an article page to capture a “conversion” if your articles include Calls To Action.</p>
 
 <h2 id="modifying-templates">Modifying templates</h2>
 
-<p><strong>WARNING</strong>: We don’t provide any guarantee that we won’t change the templates between versions.<br />
+<p><strong>WARNING</strong>: We don’t provide any guarantee that we won’t change the templates between versions.
 If you chose to modify a template, you’ll need to lock your version to MAJOR.MINOR.PATCH instead of just MAJOR in</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -534,18 +538,17 @@ If you chose to modify a template, you’ll need to lock your version to MAJOR.M
 
 <p>The latest version is <a href="https://www.npmjs.com/package/algoliasearch.zendesk-hc"><img src="https://img.shields.io/npm/v/algoliasearch.zendesk-hc.png" alt="version" /></a>.</p>
 
-<p>With your version locked in place, you can now look at <a href="https://github.com/algolia/algoliasearch-zendesk/blob/master/app/src/templates.js"><code class="highlighter-rouge">templates.js</code></a> to know which keys you can override.<br />
-The code here is ES6, you’ll need to rewrite your custom template using Vanilla JavaScript instead.<br />
-Also, some templates are using a <code class="highlighter-rouge">compile</code> function in this file. This function is internally calling the <a href="http://mustache.github.io/mustache.5.html"><code class="highlighter-rouge">Hogan.js</code> template engine</a> with square brackets instead of braces (because Zendesk templates already use braces). This function is available using <code class="highlighter-rouge">algoliasearchZendeskHC.compile</code>.</p>
+<p>With your version locked in place, you can now look at <a href="https://github.com/algolia/algoliasearch-zendesk/blob/master/app/src/templates.js"><code class="language-plaintext highlighter-rouge">templates.js</code></a> to know which keys you can override.
+The code here is ES6, you’ll need to rewrite your custom template using Vanilla JavaScript instead.
+Also, some templates are using a <code class="language-plaintext highlighter-rouge">compile</code> function in this file. This function is internally calling the <a href="http://mustache.github.io/mustache.5.html"><code class="language-plaintext highlighter-rouge">Hogan.js</code> template engine</a> with square brackets instead of braces (because Zendesk templates already use braces). This function is available using <code class="language-plaintext highlighter-rouge">algoliasearchZendeskHC.compile</code>.</p>
 
 <h2 id="whitelisting-our-ips">Whitelisting our IPs</h2>
 
-<p>In case you’re using Zendesk’s <a href="https://support.zendesk.com/hc/en-us/articles/203663706-Restricting-access-to-Zendesk-Support-and-your-Help-Center-using-IP-restrictions">IP restrictions feature</a>, you’ll need to whitelist our IPs for our indexing to work.<br />
+<p>In case you’re using Zendesk’s <a href="https://support.zendesk.com/hc/en-us/articles/203663706-Restricting-access-to-Zendesk-Support-and-your-Help-Center-using-IP-restrictions">IP restrictions feature</a>, you’ll need to whitelist our IPs for our indexing to work.
 Here are those IPs:</p>
 <ul>
-  <li><code class="highlighter-rouge">3.221.200.5</code></li>
-  <li><code class="highlighter-rouge">52.204.20.39</code></li>
-  <li><code class="highlighter-rouge">52.22.248.248</code></li>
+  <li><code class="language-plaintext highlighter-rouge">104.196.103.173</code></li>
+  <li><code class="language-plaintext highlighter-rouge">35.234.69.129</code></li>
 </ul>
 
   </article>
@@ -574,7 +577,7 @@ Here are those IPs:</p>
     <a class='ac-footer-btn ac-footer-btn-cta' href='https://community.algolia.com/'>See More</a>
     <span class='ac-icon ac-icon-love-dark'></span>
   </div>
-  <p class='ac-footer-version'>Latest version: 2.30.1</p>
+  <p class='ac-footer-version'>Latest version: 2.32.0</p>
   <div class='ac-footer-actions'>
     <div class='container'>
       <p>Build unique search experiences with Algolia</p>
